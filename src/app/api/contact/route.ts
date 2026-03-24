@@ -12,7 +12,7 @@ export async function POST(req: Request) {
   const resend = new Resend(apiKey)
 
   const { error } = await resend.emails.send({
-    from: 'PaintCraft Quote <onboarding@resend.dev>',
+    from: 'PaintCraft Quote <quotes@paintcraft.com.au>',
     to,
     replyTo: email,
     subject: `New quote request from ${name}`,
