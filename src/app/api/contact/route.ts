@@ -1,13 +1,15 @@
 import { Resend } from 'resend'
 import { NextResponse } from 'next/server'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
-
 export async function POST(req: Request) {
   const { name, phone, email, service, suburb, message } = await req.json()
 
+  const apiKey = process.env.RESEND_API_KEY
   const to = process.env.RESEND_TO_EMAIL
+  if (!apiKey) return NextResponse.json({ error: 'Missing RESEND_API_KEY' }, { status: 500 })
   if (!to) return NextResponse.json({ error: 'Missing RESEND_TO_EMAIL' }, { status: 500 })
+
+  const resend = new Resend(apiKey)
 
   const { error } = await resend.emails.send({
     from: 'PaintCraft Quote <onboarding@resend.dev>',
