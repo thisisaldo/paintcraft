@@ -9,7 +9,8 @@ const projects = [
   { src: '/photo3.jpeg', aspect: 'aspect-square', span: '' },
   { src: '/photo4.jpeg', aspect: 'aspect-square', span: '' },
   { src: '/photo5.jpeg', aspect: 'aspect-square', span: '' },
-  { src: '/photo6.jpeg', aspect: 'aspect-[4/3]', span: 'lg:col-span-2' },
+  { src: '/photo6.jpeg', aspect: 'aspect-square', span: '' },
+  { src: '/photo8.png', aspect: 'aspect-[4/3]', span: 'lg:col-span-2' },
 ]
 
 export default function Portfolio() {
