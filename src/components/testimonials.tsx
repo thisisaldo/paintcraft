@@ -71,7 +71,7 @@ export default function Testimonials() {
               <p className="text-[#111110] text-sm leading-relaxed flex-1">
                 &ldquo;{t.quote}&rdquo;
               </p>
-              <div className="flex items-center justify-between pt-4 border-t border-[#F0EEEb]">
+              <div className="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-[#F0EEEb]">
                 <div>
                   <p className="text-[#111110] font-medium text-sm">{t.author}</p>
                   <p className="text-[#A8A29E] text-xs">{t.location}</p>

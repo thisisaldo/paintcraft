@@ -138,7 +138,7 @@ export default function ServiceAreas() {
           </div>
           <a
             href="tel:+61395472863"
-            className="flex-shrink-0 flex items-center gap-2 bg-[#111110] text-white text-sm px-5 py-2.5 rounded-full hover:bg-[#2A2A29] active:scale-[0.98] transition-all duration-200"
+            className="flex-shrink-0 w-full md:w-auto flex items-center justify-center gap-2 bg-[#111110] text-white text-sm px-5 py-2.5 rounded-full hover:bg-[#2A2A29] active:scale-[0.98] transition-all duration-200"
           >
             Call (03) 9547 2863
           </a>

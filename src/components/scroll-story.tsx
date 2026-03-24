@@ -48,10 +48,47 @@ export default function ScrollStory() {
   const cardRefs    = useRef<(HTMLDivElement | null)[]>([])
   const hintRef     = useRef<HTMLDivElement>(null)
 
-  const durationRef    = useRef(0)
-  const rafRef         = useRef<number | null>(null)
-  const pendingSeek    = useRef(false)
-  const targetTimeRef  = useRef(0)
+  const durationRef   = useRef(0)
+  const rafRef        = useRef<number | null>(null)
+  const pendingSeek   = useRef(false)
+  const targetTimeRef = useRef(0)
+  const videoNatW     = useRef(1920)
+  const videoNatH     = useRef(1080)
+
+  // ── Draw video frame into canvas using object-fit: cover math ─────────────
+  const drawCover = (ctx: CanvasRenderingContext2D, video: HTMLVideoElement) => {
+    const cw = ctx.canvas.width
+    const ch = ctx.canvas.height
+    const vw = videoNatW.current
+    const vh = videoNatH.current
+    const videoAspect = vw / vh
+    const canvasAspect = cw / ch
+
+    let sx = 0, sy = 0, sw = vw, sh = vh
+    if (videoAspect > canvasAspect) {
+      // Video is wider — crop the sides
+      sw = vh * canvasAspect
+      sx = (vw - sw) / 2
+    } else {
+      // Video is taller — crop top/bottom
+      sh = vw / canvasAspect
+      sy = (vh - sh) / 2
+    }
+
+    ctx.drawImage(video, sx, sy, sw, sh, 0, 0, cw, ch)
+  }
+
+  // ── Size canvas to its actual CSS pixel dimensions ────────────────────────
+  const resizeCanvas = () => {
+    const canvas = canvasRef.current
+    if (!canvas) return
+    const w = canvas.offsetWidth  || window.innerWidth
+    const h = canvas.offsetHeight || window.innerHeight
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w
+      canvas.height = h
+    }
+  }
 
   // ── Canvas draw: called every time the video finishes a seek ──────────────
   useEffect(() => {
@@ -62,9 +99,9 @@ export default function ScrollStory() {
     const drawFrame = () => {
       const ctx = canvas.getContext('2d')
       if (!ctx) return
-      ctx.drawImage(video, 0, 0, canvas.width, canvas.height)
+      drawCover(ctx, video)
 
-      // If another seek arrived while this one was in flight, do it now
+      // If another seek arrived while this one was in flight, apply it now
       if (pendingSeek.current) {
         pendingSeek.current = false
         const target = targetTimeRef.current
@@ -75,18 +112,30 @@ export default function ScrollStory() {
 
     const onMeta = () => {
       durationRef.current = video.duration
-      // Size canvas to video's natural resolution for sharp output
-      canvas.width  = video.videoWidth  || 1920
-      canvas.height = video.videoHeight || 1080
+      videoNatW.current = video.videoWidth  || 1920
+      videoNatH.current = video.videoHeight || 1080
+      resizeCanvas()
+    }
+
+    // Resize canvas and redraw on viewport/orientation changes
+    const onResize = () => {
+      resizeCanvas()
+      if (video.readyState >= 2) {
+        const ctx = canvas.getContext('2d')
+        if (ctx) drawCover(ctx, video)
+      }
     }
 
     video.addEventListener('loadedmetadata', onMeta)
     video.addEventListener('seeked', drawFrame)
+    window.addEventListener('resize', onResize)
+
     if (video.readyState >= 1) onMeta()
 
     return () => {
       video.removeEventListener('loadedmetadata', onMeta)
       video.removeEventListener('seeked', drawFrame)
+      window.removeEventListener('resize', onResize)
     }
   }, [])
 
@@ -125,7 +174,7 @@ export default function ScrollStory() {
           el.style.pointerEvents = op > 0.1 ? 'auto' : 'none'
         })
 
-if (hintRef.current) hintRef.current.style.opacity = String(Math.max(0, 1 - p * 12))
+        if (hintRef.current) hintRef.current.style.opacity = String(Math.max(0, 1 - p * 12))
       })
     }
 
@@ -153,11 +202,11 @@ if (hintRef.current) hintRef.current.style.opacity = String(Math.max(0, 1 - p * 
           <source src="/painting.mp4" type="video/mp4" />
         </video>
 
-        {/* Canvas — GPU-composited frame output */}
+        {/* Canvas — sized to viewport, drawn with cover-fit math */}
         <canvas
           ref={canvasRef}
           className="absolute inset-0 w-full h-full"
-          style={{ objectFit: 'cover', opacity: 0.82, willChange: 'contents' }}
+          style={{ opacity: 0.82, willChange: 'contents' }}
         />
 
         {/* Top gradient */}
@@ -194,7 +243,7 @@ if (hintRef.current) hintRef.current.style.opacity = String(Math.max(0, 1 - p * 
               style={{ opacity: 0, transform: 'translateY(18px)', pointerEvents: 'none' }}
             >
               <div
-                className="rounded-2xl border border-black/8 px-8 py-8"
+                className="rounded-2xl border border-black/8 px-5 py-6 md:px-8 md:py-8"
                 style={{
                   background: 'rgba(250,250,248,0.55)',
                   backdropFilter: 'blur(20px)',
@@ -206,12 +255,12 @@ if (hintRef.current) hintRef.current.style.opacity = String(Math.max(0, 1 - p * 
                   {card.eyebrow}
                 </p>
                 <h2
-                  className="text-3xl md:text-4xl text-[#111110] leading-tight tracking-tight mb-5 whitespace-pre-line"
+                  className="text-2xl md:text-4xl text-[#111110] leading-tight tracking-tight mb-4 md:mb-5 whitespace-pre-line"
                   style={{ fontFamily: 'var(--font-instrument-serif)' }}
                 >
                   {card.heading}
                 </h2>
-                <p className="text-[#78716C] text-sm leading-relaxed mb-7">{card.body}</p>
+                <p className="text-[#78716C] text-sm leading-relaxed mb-5 md:mb-7">{card.body}</p>
                 <div
                   className="inline-flex items-baseline gap-2 px-4 py-2 rounded-full border border-black/8"
                   style={{ background: 'rgba(17,17,16,0.05)' }}
@@ -223,7 +272,6 @@ if (hintRef.current) hintRef.current.style.opacity = String(Math.max(0, 1 - p * 
             </div>
           ))}
         </div>
-
 
         {/* Scroll hint */}
         <div
