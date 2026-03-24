@@ -31,14 +31,18 @@ export default function Navbar() {
         }`}
       >
         {/* Logo */}
-        <Link href="/" className="flex shrink-0 items-center">
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="flex shrink-0 items-center"
+          aria-label="Scroll to top"
+        >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/logo.svg"
             alt="PaintCraft"
             style={{ height: '40px', width: 'auto', display: 'block', maxWidth: 'none' }}
           />
-        </Link>
+        </button>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-7">
