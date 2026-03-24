@@ -37,7 +37,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 px-4 bg-[#FAFAF8]">
+    <section id="services" className="relative py-24 px-4 bg-[#FAFAF8] overflow-hidden">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
@@ -100,6 +100,7 @@ export default function Services() {
           })}
         </div>
       </div>
+      <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-b from-transparent to-[#FAFAF8] pointer-events-none" />
     </section>
   )
 }

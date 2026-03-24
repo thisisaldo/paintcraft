@@ -6,6 +6,7 @@ import { ArrowRight } from 'lucide-react'
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null)
+  const sectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
     const video = videoRef.current
@@ -20,11 +21,29 @@ export default function Hero() {
     }
 
     video.addEventListener('ended', handleEnded)
-    return () => video.removeEventListener('ended', handleEnded)
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.currentTime = 0
+          video.play()
+        } else {
+          video.pause()
+        }
+      },
+      { threshold: 0.2 }
+    )
+
+    if (sectionRef.current) observer.observe(sectionRef.current)
+
+    return () => {
+      video.removeEventListener('ended', handleEnded)
+      observer.disconnect()
+    }
   }, [])
 
   return (
-    <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden bg-[#FAFAF8]">
+    <section ref={sectionRef} className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden bg-[#FAFAF8]">
       {/* Video background */}
       <div
         className="absolute inset-0"

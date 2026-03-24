@@ -45,7 +45,7 @@ const projects = [
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="py-24 px-4 bg-[#FAFAF8]">
+    <section id="portfolio" className="relative py-24 px-4 bg-[#FAFAF8] overflow-hidden">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
@@ -98,6 +98,7 @@ export default function Portfolio() {
           ))}
         </div>
       </div>
+      <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-b from-transparent to-[#FAFAF8] pointer-events-none" />
     </section>
   )
 }

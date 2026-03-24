@@ -60,7 +60,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
-    <section className="py-24 px-4 bg-white">
+    <section className="relative py-24 px-4 bg-[#FAFAF8] overflow-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -106,6 +106,7 @@ export default function FAQ() {
           ))}
         </div>
       </div>
+      <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-b from-transparent to-[#FAFAF8] pointer-events-none" />
     </section>
   )
 }

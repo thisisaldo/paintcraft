@@ -37,7 +37,8 @@ export default function Contact() {
     'bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-white/30 transition-colors w-full'
 
   return (
-    <section id="contact" className="py-24 px-4 bg-[#111110]">
+    <section id="contact" className="relative py-24 px-4 bg-[#111110]">
+      <div className="absolute top-0 inset-x-0 h-16 bg-gradient-to-b from-[#FAFAF8] to-transparent pointer-events-none" />
       <div className="max-w-5xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
           {/* Left */}

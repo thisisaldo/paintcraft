@@ -43,7 +43,7 @@ function StarRow() {
 
 export default function Testimonials() {
   return (
-    <section className="py-24 px-4 bg-[#FAFAF8]">
+    <section className="relative py-24 px-4 bg-[#FAFAF8] overflow-hidden">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="mb-14">
@@ -84,6 +84,7 @@ export default function Testimonials() {
           ))}
         </div>
       </div>
+      <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-b from-transparent to-[#FAFAF8] pointer-events-none" />
     </section>
   )
 }

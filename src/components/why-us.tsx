@@ -48,7 +48,7 @@ const stats = [
 
 export default function WhyUs() {
   return (
-    <section className="py-24 px-4 bg-white">
+    <section className="relative py-24 px-4 bg-[#FAFAF8] overflow-hidden">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="mb-14">
@@ -68,7 +68,7 @@ export default function WhyUs() {
         {/* Stats bar */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[#E8E8E5] border border-[#E8E8E5] rounded-2xl overflow-hidden mb-10">
           {stats.map((stat) => (
-            <div key={stat.label} className="bg-white p-6 md:p-8 text-center">
+            <div key={stat.label} className="bg-[#FAFAF8] p-6 md:p-8 text-center">
               <div
                 className="text-3xl md:text-4xl text-[#111110] mb-1.5"
                 style={{ fontFamily: 'var(--font-instrument-serif)' }}
@@ -101,6 +101,7 @@ export default function WhyUs() {
           })}
         </div>
       </div>
+      <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-b from-transparent to-[#FAFAF8] pointer-events-none" />
     </section>
   )
 }
