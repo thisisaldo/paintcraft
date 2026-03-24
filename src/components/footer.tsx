@@ -29,11 +29,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/5">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-5 h-5 rounded-[4px] bg-white flex items-center justify-center">
-                <div className="w-2.5 h-2.5 bg-[#111110] rounded-[1px]" />
-              </div>
-              <span className="text-white text-sm font-medium">PaintCraft</span>
+            <div className="mb-4">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logo.svg" alt="PaintCraft" style={{ height: '36px', width: 'auto', display: 'block', maxWidth: 'none' }} />
             </div>
             <p className="text-[#4A4A48] text-xs leading-relaxed mb-5">
               Melbourne&apos;s trusted residential and commercial painting specialists. Licensed,

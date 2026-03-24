@@ -31,13 +31,13 @@ export default function Navbar() {
         }`}
       >
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5 group">
-          <div className="w-5 h-5 rounded-[4px] bg-[#111110] flex items-center justify-center">
-            <div className="w-2.5 h-2.5 bg-[#FAFAF8] rounded-[1px]" />
-          </div>
-          <span className="text-sm font-medium tracking-tight text-[#111110]">
-            PaintCraft
-          </span>
+        <Link href="/" className="flex shrink-0 items-center">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/logo.svg"
+            alt="PaintCraft"
+            style={{ height: '40px', width: 'auto', display: 'block', maxWidth: 'none' }}
+          />
         </Link>
 
         {/* Desktop Nav */}
