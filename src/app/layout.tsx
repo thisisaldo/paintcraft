@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Instrument_Serif } from 'next/font/google'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
+import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 const instrumentSerif = Instrument_Serif({
@@ -130,7 +131,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
       </head>
-      <body className="antialiased bg-[#FAFAF8] text-[#111110]">{children}</body>
+      <body className="antialiased bg-[#FAFAF8] text-[#111110]">
+        {children}
+        <Analytics />
+      </body>
     </html>
   )
 }
