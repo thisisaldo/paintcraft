@@ -33,7 +33,7 @@ export default function Navbar() {
         {/* Logo */}
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="flex shrink-0 items-center"
+          className="flex shrink-0 items-center cursor-pointer"
           aria-label="Scroll to top"
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
