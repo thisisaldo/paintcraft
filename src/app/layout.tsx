@@ -33,12 +33,12 @@ export const metadata: Metadata = {
     'Melbourne painting company',
   ],
   authors: [{ name: 'Orbit Painting Melbourne' }],
-  metadataBase: new URL('https://orbitpaintingmelbourne.com.au'),
+  metadataBase: new URL('https://www.orbitpaintingmelbourne.com.au'),
   alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
     locale: 'en_AU',
-    url: 'https://orbitpaintingmelbourne.com.au',
+    url: 'https://www.orbitpaintingmelbourne.com.au',
     siteName: 'Orbit Painting Melbourne',
     title: 'Orbit Painting Melbourne | Residential & Commercial Painting',
     description:
@@ -60,11 +60,11 @@ export const metadata: Metadata = {
 const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  '@id': 'https://orbitpaintingmelbourne.com.au/#business',
+  '@id': 'https://www.orbitpaintingmelbourne.com.au/#business',
   name: 'Orbit Painting Melbourne',
-  image: 'https://orbitpaintingmelbourne.com.au/og-image.jpg',
+  image: 'https://www.orbitpaintingmelbourne.com.au/og-image.jpg',
   description: "South East Melbourne's local residential and commercial painting specialists. VBA licensed, fully insured, free detailed quotes within 24 hours.",
-  url: 'https://orbitpaintingmelbourne.com.au',
+  url: 'https://www.orbitpaintingmelbourne.com.au',
   telephone: '+61-3-9547-2863',
   email: 'hello@orbitpaintingmelbourne.com.au',
   address: {

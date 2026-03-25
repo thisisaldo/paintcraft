@@ -4,13 +4,13 @@ import Image from 'next/image'
 import { useEffect, useRef } from 'react'
 
 const projects = [
-  { src: '/photo1.jpeg', aspect: 'aspect-[16/9]', span: 'lg:col-span-2' },
-  { src: '/photo2.jpeg', aspect: 'aspect-square', span: '' },
-  { src: '/photo3.jpeg', aspect: 'aspect-square', span: '' },
-  { src: '/photo4.jpeg', aspect: 'aspect-square', span: '' },
-  { src: '/photo5.jpeg', aspect: 'aspect-square', span: '' },
-  { src: '/photo6.jpeg', aspect: 'aspect-square', span: '' },
-  { src: '/photo8.png', aspect: 'aspect-[4/3]', span: 'lg:col-span-2' },
+  { src: '/photo1.jpeg', aspect: 'aspect-[16/9]', span: 'lg:col-span-2', alt: 'Interior painting project — feature wall and trim in a South East Melbourne home' },
+  { src: '/photo2.jpeg', aspect: 'aspect-square', span: '', alt: 'Exterior house painting in Cheltenham by Orbit Painting Melbourne' },
+  { src: '/photo3.jpeg', aspect: 'aspect-square', span: '', alt: 'Residential interior repaint in Oakleigh — walls and ceiling' },
+  { src: '/photo4.jpeg', aspect: 'aspect-square', span: '', alt: 'Commercial painting project in South East Melbourne office fitout' },
+  { src: '/photo5.jpeg', aspect: 'aspect-square', span: '', alt: 'Exterior weatherboard painting in Frankston by Orbit Painting' },
+  { src: '/photo6.jpeg', aspect: 'aspect-square', span: '', alt: 'Interior feature wall painting in a Dandenong home' },
+  { src: '/photo8.png', aspect: 'aspect-[4/3]', span: 'lg:col-span-2', alt: 'Full exterior repaint of a period home in St Kilda — Orbit Painting Melbourne' },
 ]
 
 export default function Portfolio() {
@@ -80,7 +80,7 @@ export default function Portfolio() {
             >
               <Image
                 src={project.src}
-                alt="Orbit Painting Melbourne project"
+                alt={project.alt}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"

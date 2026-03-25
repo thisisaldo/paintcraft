@@ -131,7 +131,7 @@ export default function Hero() {
               </motion.div>
 
               {/* Headline */}
-              <motion.h1
+              <motion.h2
                 variants={item}
                 className="text-4xl md:text-[3.5rem] lg:text-[4.25rem] text-[#111110] leading-[0.95] tracking-[-0.025em] mb-6"
                 style={{ fontFamily: 'var(--font-instrument-serif)' }}
@@ -141,7 +141,7 @@ export default function Hero() {
                 <em>perfectly</em> — on time,
                 <br />
                 on budget
-              </motion.h1>
+              </motion.h2>
 
               {/* Subtext */}
               <motion.p variants={item} className="text-[#78716C] text-base md:text-lg max-w-[44ch] mx-auto leading-relaxed mb-8">
