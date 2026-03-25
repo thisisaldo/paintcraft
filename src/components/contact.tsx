@@ -76,8 +76,8 @@ export default function Contact() {
             </div>
 
             <p className="text-[#78716C] text-sm leading-relaxed">
-              Tell us about your project and we&apos;ll respond within one business day with a
-              detailed, no-obligation quote.
+              Tell us about your project and we&apos;ll get back to you the same day with a
+              detailed, fixed-price, no-obligation quote.
             </p>
 
             <div className="flex flex-col gap-5">
@@ -131,7 +131,7 @@ export default function Contact() {
                   </div>
                   <h3 className="text-white font-medium mb-2">Quote request received</h3>
                   <p className="text-[#78716C] text-sm">
-                    We&apos;ll be in touch within one business day.
+                    We&apos;ll be in touch the same day with your quote.
                   </p>
                 </div>
               </div>
@@ -197,7 +197,7 @@ export default function Contact() {
                       value={form.suburb}
                       onChange={update('suburb')}
                       className={inputClass}
-                      placeholder="e.g. South Yarra VIC 3141"
+                      placeholder="e.g. Oakleigh VIC 3166"
                     />
                   </div>
                 </div>

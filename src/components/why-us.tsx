@@ -9,9 +9,9 @@ const credentials = [
   },
   {
     icon: Clock,
-    title: '15+ Years in Melbourne',
+    title: '15+ Years in South East Melbourne',
     description:
-      'Established in 2009. Deep knowledge of Melbourne\'s building types, weather, and conditions.',
+      'Established in 2009. Deep knowledge of SE Melbourne\'s building types — weatherboards, brick veneer, render — and local conditions.',
   },
   {
     icon: Star,
@@ -35,15 +35,15 @@ const credentials = [
     icon: FileCheck,
     title: 'Fixed-Price Quotes',
     description:
-      'Detailed, itemised, written quotes with no hidden charges. What we quote is what you pay.',
+      'Detailed, itemised, written quotes returned within 24 hours. No hidden charges — what we quote is exactly what you pay.',
   },
 ]
 
 const stats = [
-  { value: '15+', label: 'Years in Melbourne' },
+  { value: '15+', label: 'Years in SE Melbourne' },
   { value: '2,400+', label: 'Projects completed' },
-  { value: '47', label: 'Suburbs covered' },
-  { value: '4.9★', label: 'Average Google review' },
+  { value: '40+', label: 'SE suburbs covered' },
+  { value: '4.9★', label: 'Google rating (127 reviews)' },
 ]
 
 export default function WhyUs() {

@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     siteName: 'PaintCraft Melbourne',
     title: 'PaintCraft Melbourne | Residential & Commercial Painting',
     description:
-      "Melbourne's trusted painting specialists. Expert residential and commercial painters serving all Melbourne suburbs.",
+      "South East Melbourne's trusted painting specialists. Residential and commercial painters serving Dandenong, Oakleigh, Clayton, Frankston, Cheltenham, St Kilda and the entire SE corridor.",
     images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'PaintCraft Melbourne' }],
   },
   twitter: {
@@ -63,7 +63,7 @@ const localBusinessSchema = {
   '@id': 'https://prestigepainters.com.au/#business',
   name: 'PaintCraft Melbourne',
   image: 'https://prestigepainters.com.au/og-image.jpg',
-  description: "Melbourne's trusted residential and commercial painting specialists.",
+  description: "South East Melbourne's trusted residential and commercial painting specialists. VBA licensed, 5-year guarantee, fixed-price quotes.",
   url: 'https://prestigepainters.com.au',
   telephone: '+61-3-9547-2863',
   email: 'hello@prestigepainters.com.au',

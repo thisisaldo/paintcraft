@@ -78,7 +78,7 @@ export default function Hero() {
         <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-[#E0DDD9] bg-white/70 backdrop-blur-sm mb-10">
           <div className="w-1.5 h-1.5 rounded-full bg-[#111110]" />
           <span className="text-[11px] font-medium tracking-[0.12em] text-[#78716C] uppercase">
-            Residential &amp; Commercial · Melbourne VIC
+            South East Melbourne · Residential &amp; Commercial
           </span>
         </div>
 
@@ -96,8 +96,8 @@ export default function Hero() {
 
         {/* Subtext */}
         <p className="text-[#78716C] text-base md:text-lg max-w-[52ch] mx-auto leading-relaxed mb-10">
-          Melbourne&apos;s trusted painting specialists. We transform residential and commercial
-          spaces with precision, premium materials, and a craft refined over 15 years.
+          South East Melbourne&apos;s most trusted painters. We deliver flawless results for homes
+          and businesses across the SE corridor — from St Kilda to Frankston, with a 5-year guarantee on every job.
         </p>
 
         {/* CTAs */}
@@ -120,7 +120,7 @@ export default function Hero() {
 
         {/* Floating trust line */}
         <div className="mt-14 flex items-center justify-center gap-6 flex-wrap">
-          {['Licensed & Insured', '15+ Years Melbourne', '5-Year Guarantee', '4.9★ on Google'].map((item) => (
+          {['VBA Licensed & Insured', '15+ Years in SE Melbourne', '5-Year Written Guarantee', '4.9★ on Google (127 reviews)'].map((item) => (
             <span key={item} className="text-[11px] text-[#A8A29E] tracking-wide">
               {item}
             </span>

@@ -6,7 +6,7 @@ const services = [
     title: 'Residential Painting',
     subtitle: 'Homes & Apartments',
     description:
-      'From period homes in Caulfield to modern apartments in South Melbourne, every residential project handled with care and discretion.',
+      'From period homes in Caulfield to townhouses in Cheltenham — we protect your furniture, do thorough prep, and leave with a finish that lasts.',
     features: ['Interior & exterior', 'Colour consulting', 'Minimal disruption', 'Thorough prep'],
   },
   {
@@ -14,7 +14,7 @@ const services = [
     title: 'Commercial Painting',
     subtitle: 'Offices & Retail',
     description:
-      'Keeping Melbourne businesses looking their best. We work after hours and weekends to keep your operations uninterrupted.',
+      'Serving offices, retail, and strata across the SE corridor. We work after hours and weekends so your business never misses a beat.',
     features: ['Offices & fit-outs', 'Retail & hospitality', 'Strata buildings', 'Body corporate'],
   },
   {
@@ -30,7 +30,7 @@ const services = [
     title: 'Exterior Painting',
     subtitle: 'Facades & Outdoors',
     description:
-      'Weather-resistant finishes that protect and enhance your Melbourne property through every season.',
+      'Weather-resistant finishes that protect your SE Melbourne property through every season. Proper surface prep included — no shortcuts.',
     features: ['Weatherboard', 'Render & texture', 'Decks & fences', 'Roof painting'],
   },
 ]
@@ -51,11 +51,11 @@ export default function Services() {
             >
               Complete painting
               <br />
-              <em>services</em> for Melbourne
+              <em>services</em> across South East Melbourne
             </h2>
           </div>
           <p className="text-[#78716C] text-sm max-w-[40ch] leading-relaxed md:text-right">
-            Licensed, insured, and trusted by Melbourne homeowners and businesses since 2009.
+            VBA licensed, fully insured, and trusted by South East Melbourne homeowners and businesses since 2009.
           </p>
         </div>
 
