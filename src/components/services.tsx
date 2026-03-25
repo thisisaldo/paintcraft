@@ -6,7 +6,7 @@ const services = [
     title: 'Residential Painting',
     subtitle: 'Homes & Apartments',
     description:
-      'From heritage homes in Fitzroy to modern apartments in South Yarra, every residential project handled with care and discretion.',
+      'From period homes in Caulfield to modern apartments in South Melbourne, every residential project handled with care and discretion.',
     features: ['Interior & exterior', 'Colour consulting', 'Minimal disruption', 'Thorough prep'],
   },
   {

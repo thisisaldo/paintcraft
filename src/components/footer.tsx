@@ -10,16 +10,16 @@ const serviceLinks = [
 ]
 
 const areaLinks = [
-  'South Yarra',
-  'Toorak',
-  'Richmond',
-  'Fitzroy',
-  'Carlton',
-  'Brighton',
-  'Hawthorn',
-  'Kew',
-  'St Kilda',
   'Melbourne CBD',
+  'South Melbourne',
+  'St Kilda',
+  'Caulfield',
+  'Oakleigh',
+  'Clayton',
+  'Dandenong',
+  'Narre Warren',
+  'Frankston',
+  'Cheltenham',
 ]
 
 export default function Footer() {

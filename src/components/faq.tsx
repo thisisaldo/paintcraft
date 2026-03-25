@@ -27,7 +27,7 @@ const faqs = [
   {
     question: 'Do you paint in my suburb?',
     answer:
-      'We service the entire Melbourne metropolitan area including inner suburbs like South Yarra, Toorak, Fitzroy, and Richmond, and outer suburbs across the east, north, south, and west. Call us on (03) 9547 2863 to confirm your suburb.',
+      'We service South East Melbourne and the nearby CBD — from St Kilda and South Melbourne through Caulfield, Oakleigh, and Clayton, out to Dandenong, Narre Warren, Berwick, and the Frankston corridor. Call us on (03) 9547 2863 to confirm your suburb.',
   },
   {
     question: 'What paint brands do you use?',

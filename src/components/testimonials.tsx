@@ -1,9 +1,9 @@
 const testimonials = [
   {
     quote:
-      'The team repainted our entire Victorian terrace in South Yarra — inside and out. The preparation was extraordinarily thorough, and the finish is flawless two years on. We\'ve had countless compliments from the street.',
+      'The team repainted our entire Edwardian home in Caulfield — inside and out. The preparation was extraordinarily thorough, and the finish is flawless two years on. We\'ve had countless compliments from the street.',
     author: 'Catherine M.',
-    location: 'South Yarra',
+    location: 'Caulfield',
     service: 'Residential — Full Repaint',
   },
   {
@@ -17,14 +17,14 @@ const testimonials = [
     quote:
       'Incredibly professional from initial quote to the final walk-through. The colour consultation saved us from a decision we would have regretted, and the trim detail in the hallways is something previous painters always cut corners on.',
     author: 'Sophie & Daniel K.',
-    location: 'Hawthorn',
+    location: 'Oakleigh',
     service: 'Residential — Interior',
   },
   {
     quote:
-      'Third time using PaintCraft. They\'ve done our investment property in Richmond, our home in Kew, and now our office in the CBD. The consistency across jobs and crews is what keeps us coming back.',
+      'Third time using PaintCraft. They\'ve done our investment property in Clayton, our home in Cheltenham, and now our office in South Melbourne. The consistency across jobs and crews is what keeps us coming back.',
     author: 'Robert H.',
-    location: 'Kew',
+    location: 'Cheltenham',
     service: 'Repeat Client — Residential & Commercial',
   },
 ]
