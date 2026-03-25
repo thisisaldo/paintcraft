@@ -59,13 +59,13 @@ export default function Navbar() {
 
         {/* CTA */}
         <div className="flex items-center gap-3">
-          <Link
-            href="#contact"
+          <button
+            onClick={() => window.dispatchEvent(new Event('paintcraft:open-chat'))}
             className="hidden md:flex items-center gap-1.5 bg-[#111110] text-white text-sm px-4 py-2 rounded-full hover:bg-[#2A2A29] active:scale-[0.98] transition-all duration-200"
           >
             Free Quote
             <ArrowRight className="w-3 h-3" />
-          </Link>
+          </button>
           <button
             className="md:hidden p-2 text-[#111110]"
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -90,14 +90,13 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="#contact"
+            <button
               className="flex items-center justify-center gap-1.5 bg-[#111110] text-white text-sm px-4 py-2.5 rounded-full mt-2"
-              onClick={() => setMobileOpen(false)}
+              onClick={() => { setMobileOpen(false); window.dispatchEvent(new Event('paintcraft:open-chat')) }}
             >
               Get Free Quote
               <ArrowRight className="w-3 h-3" />
-            </Link>
+            </button>
           </div>
         </div>
       )}

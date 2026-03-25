@@ -69,6 +69,12 @@ export default function ChatWidget() {
     return () => window.removeEventListener('keydown', onKey)
   }, [])
 
+  useEffect(() => {
+    const onOpen = () => setOpen(true)
+    window.addEventListener('paintcraft:open-chat', onOpen)
+    return () => window.removeEventListener('paintcraft:open-chat', onOpen)
+  }, [])
+
   async function sendMessage() {
     const text = input.trim()
     if (!text || loading) return

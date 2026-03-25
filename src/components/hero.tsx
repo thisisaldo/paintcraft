@@ -102,13 +102,13 @@ export default function Hero() {
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-          <Link
-            href="#contact"
+          <button
+            onClick={() => window.dispatchEvent(new Event('paintcraft:open-chat'))}
             className="flex items-center gap-2 bg-[#111110] text-white text-sm px-6 py-3 rounded-full hover:bg-[#2A2A29] active:scale-[0.98] transition-all duration-200 shadow-[0_2px_16px_rgba(17,17,16,0.18)]"
           >
             Get Free Quote
             <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
+          </button>
           <Link
             href="#portfolio"
             className="flex items-center gap-1.5 text-[#78716C] text-sm hover:text-[#111110] transition-colors duration-200"

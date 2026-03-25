@@ -1,70 +1,33 @@
 'use client'
 
-import { useState } from 'react'
-import { ArrowRight, Phone, Mail, Clock } from 'lucide-react'
+import { Phone, Mail, Clock, MessageCircle, ArrowRight, CheckCircle } from 'lucide-react'
 
-type FormState = {
-  name: string
-  phone: string
-  email: string
-  service: string
-  suburb: string
-  message: string
-}
+const highlights = [
+  'Fixed-price written quote within 24 hours',
+  'No obligation — just honest advice',
+  'Colour consultation included at no extra cost',
+  'VBA licensed & fully insured',
+]
 
 export default function Contact() {
-  const [form, setForm] = useState<FormState>({
-    name: '',
-    phone: '',
-    email: '',
-    service: '',
-    suburb: '',
-    message: '',
-  })
-  const [submitted, setSubmitted] = useState(false)
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState<string | null>(null)
-
-  const update = (field: keyof FormState) => (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => setForm((prev) => ({ ...prev, [field]: e.target.value }))
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setLoading(true)
-    setError(null)
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
-      })
-      const data = await res.json()
-      if (!res.ok) throw new Error(data?.error?.message || data?.error || 'Failed to send')
-      setSubmitted(true)
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again or call us directly.')
-    } finally {
-      setLoading(false)
-    }
+  function openChat() {
+    window.dispatchEvent(new Event('paintcraft:open-chat'))
   }
-
-  const inputClass =
-    'bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-white/30 transition-colors w-full'
 
   return (
     <section id="contact" className="relative py-24 px-4 bg-[#111110]">
       <div className="absolute top-0 inset-x-0 h-16 bg-gradient-to-b from-[#FAFAF8] to-transparent pointer-events-none" />
       <div className="max-w-5xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
-          {/* Left */}
-          <div className="lg:col-span-2 flex flex-col gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+          {/* Left — headline + contact info */}
+          <div className="flex flex-col gap-10">
             <div>
               <p className="text-[11px] font-medium tracking-[0.12em] text-[#78716C] uppercase mb-3">
                 Get in touch
               </p>
               <h2
-                className="text-4xl md:text-5xl text-white leading-tight tracking-tight"
+                className="text-4xl md:text-5xl text-white leading-tight tracking-tight mb-5"
                 style={{ fontFamily: 'var(--font-instrument-serif)' }}
               >
                 Ready to
@@ -73,12 +36,10 @@ export default function Contact() {
                 <br />
                 your space?
               </h2>
+              <p className="text-[#78716C] text-sm leading-relaxed">
+                Chat with Mick for an instant answer on pricing, timelines, or to kick off your free quote — no forms, no waiting.
+              </p>
             </div>
-
-            <p className="text-[#78716C] text-sm leading-relaxed">
-              Tell us about your project and we&apos;ll get back to you the same day with a
-              detailed, fixed-price, no-obligation quote.
-            </p>
 
             <div className="flex flex-col gap-5">
               <a href="tel:+61395472863" className="flex items-center gap-3 group">
@@ -119,114 +80,52 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Right — Form */}
-          <div className="lg:col-span-3">
-            {submitted ? (
-              <div className="h-full flex items-center justify-center min-h-[400px]">
-                <div className="text-center">
-                  <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center mx-auto mb-5">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <h3 className="text-white font-medium mb-2">Quote request received</h3>
-                  <p className="text-[#78716C] text-sm">
-                    We&apos;ll be in touch the same day with your quote.
-                  </p>
-                </div>
+          {/* Right — chat CTA card */}
+          <div className="rounded-2xl border border-white/10 bg-white/4 p-8 flex flex-col gap-8">
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                <MessageCircle className="w-5 h-5 text-white" strokeWidth={1.5} />
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="flex flex-col gap-2">
-                    <label className="text-white/40 text-xs">Full name</label>
-                    <input
-                      type="text"
-                      required
-                      value={form.name}
-                      onChange={update('name')}
-                      className={inputClass}
-                      placeholder="Sarah Johnson"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <label className="text-white/40 text-xs">Phone number</label>
-                    <input
-                      type="tel"
-                      value={form.phone}
-                      onChange={update('phone')}
-                      className={inputClass}
-                      placeholder="04XX XXX XXX"
-                    />
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-2">
-                  <label className="text-white/40 text-xs">Email address</label>
-                  <input
-                    type="email"
-                    required
-                    value={form.email}
-                    onChange={update('email')}
-                    className={inputClass}
-                    placeholder="sarah@example.com.au"
-                  />
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="flex flex-col gap-2">
-                    <label className="text-white/40 text-xs">Service required</label>
-                    <select
-                      value={form.service}
-                      onChange={update('service')}
-                      className={inputClass}
-                    >
-                      <option value="" className="bg-[#111110]">Select a service…</option>
-                      <option value="residential-interior" className="bg-[#111110]">Residential — Interior</option>
-                      <option value="residential-exterior" className="bg-[#111110]">Residential — Exterior</option>
-                      <option value="residential-full" className="bg-[#111110]">Residential — Full repaint</option>
-                      <option value="commercial" className="bg-[#111110]">Commercial painting</option>
-                      <option value="strata" className="bg-[#111110]">Strata / body corporate</option>
-                      <option value="other" className="bg-[#111110]">Other</option>
-                    </select>
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <label className="text-white/40 text-xs">Property suburb</label>
-                    <input
-                      type="text"
-                      value={form.suburb}
-                      onChange={update('suburb')}
-                      className={inputClass}
-                      placeholder="e.g. Oakleigh VIC 3166"
-                    />
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-2">
-                  <label className="text-white/40 text-xs">Project details</label>
-                  <textarea
-                    rows={4}
-                    value={form.message}
-                    onChange={update('message')}
-                    className={`${inputClass} resize-none`}
-                    placeholder="Property type, approximate size, what needs painting, any specific requirements…"
-                  />
-                </div>
-
-                {error && (
-                  <p className="text-red-400 text-xs">{error}</p>
-                )}
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="flex items-center justify-center gap-2 bg-white text-[#111110] text-sm font-medium px-6 py-3.5 rounded-full hover:bg-[#FAFAF8] active:scale-[0.98] transition-all duration-200 mt-2 disabled:opacity-50 disabled:cursor-not-allowed"
+              <div>
+                <h3
+                  className="text-white text-xl leading-snug mb-1"
+                  style={{ fontFamily: 'var(--font-instrument-serif)' }}
                 >
-                  {loading ? 'Sending…' : 'Request Free Quote'}
-                  {!loading && <ArrowRight className="w-3.5 h-3.5" />}
-                </button>
-              </form>
-            )}
+                  Chat with Mick
+                </h3>
+                <p className="text-[#78716C] text-sm leading-relaxed">
+                  Get answers on pricing, suburbs, timelines, or start your free quote — right now.
+                </p>
+              </div>
+            </div>
+
+            <ul className="flex flex-col gap-3">
+              {highlights.map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <CheckCircle className="w-4 h-4 text-white/40 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                  <span className="text-[#78716C] text-sm">{item}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="flex flex-col gap-3">
+              <button
+                onClick={openChat}
+                className="flex items-center justify-center gap-2 bg-white text-[#111110] text-sm font-medium px-6 py-3.5 rounded-full hover:bg-[#FAFAF8] active:scale-[0.98] transition-all duration-200"
+              >
+                <MessageCircle className="w-4 h-4" />
+                Start free quote chat
+              </button>
+              <a
+                href="tel:+61395472863"
+                className="flex items-center justify-center gap-1.5 text-[#78716C] text-sm hover:text-white transition-colors py-1"
+              >
+                Prefer to call? (03) 9547 2863
+                <ArrowRight className="w-3.5 h-3.5" />
+              </a>
+            </div>
           </div>
+
         </div>
       </div>
     </section>

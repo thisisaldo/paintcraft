@@ -1,4 +1,7 @@
+'use client'
+
 import Link from 'next/link'
+import { MessageCircle } from 'lucide-react'
 
 const serviceLinks = [
   { label: 'Residential Painting', href: '#services' },
@@ -6,7 +9,7 @@ const serviceLinks = [
   { label: 'Interior Painting', href: '#services' },
   { label: 'Exterior Painting', href: '#services' },
   { label: 'Strata Painting', href: '#services' },
-  { label: 'Colour Consulting', href: '#contact' },
+  { label: 'Colour Consulting', href: '#services' },
 ]
 
 const areaLinks = [
@@ -22,11 +25,30 @@ const areaLinks = [
   'Cheltenham',
 ]
 
+const trustBadges = [
+  { label: 'VBA Registered', sub: 'Victorian Building Authority' },
+  { label: '5-Year Guarantee', sub: 'Written, on every job' },
+  { label: '4.9★ Google', sub: '127 verified reviews' },
+  { label: 'Since 2009', sub: '15+ years in SE Melbourne' },
+]
+
 export default function Footer() {
   return (
-    <footer className="bg-[#111110] border-t border-white/5 px-4 pt-16 pb-8">
+    <footer className="bg-[#111110] border-t border-white/5 px-4 pt-14 pb-8">
       <div className="max-w-5xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/5">
+
+        {/* Trust strip */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/5 rounded-2xl overflow-hidden mb-12">
+          {trustBadges.map((badge) => (
+            <div key={badge.label} className="bg-[#111110] px-5 py-4">
+              <p className="text-white text-sm font-medium">{badge.label}</p>
+              <p className="text-[#4A4A48] text-xs mt-0.5">{badge.sub}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Main grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 pb-12 border-b border-white/5">
           {/* Brand */}
           <div>
             <div className="mb-4">
@@ -34,13 +56,16 @@ export default function Footer() {
               <img src="/logo.svg" alt="PaintCraft" style={{ height: '36px', width: 'auto', display: 'block', maxWidth: 'none' }} />
             </div>
             <p className="text-[#4A4A48] text-xs leading-relaxed mb-5">
-              Melbourne&apos;s trusted residential and commercial painting specialists. Licensed,
-              insured, and serving greater Melbourne since 2009.
+              South East Melbourne&apos;s trusted residential and commercial painting specialists.
+              Licensed, insured, and delivering flawless results since 2009.
             </p>
-            <div className="text-[#3A3A38] text-xs leading-relaxed">
-              <p>VBA Registered Painter</p>
-              <p>Melbourne, Victoria 3000</p>
-            </div>
+            <button
+              onClick={() => window.dispatchEvent(new Event('paintcraft:open-chat'))}
+              className="inline-flex items-center gap-2 text-[#4A4A48] text-xs hover:text-[#78716C] transition-colors"
+            >
+              <MessageCircle className="w-3.5 h-3.5" />
+              Chat with Mick for a free quote
+            </button>
           </div>
 
           {/* Services */}
@@ -62,52 +87,17 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Areas — keyword-rich for local SEO */}
+          {/* Areas */}
           <div>
             <h4 className="text-[#5A5A58] text-[10px] font-medium tracking-[0.12em] uppercase mb-4">
               Painters in Melbourne
             </h4>
-            <ul className="flex flex-col gap-2.5">
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5">
               {areaLinks.map((area) => (
                 <li key={area}>
                   <span className="text-[#4A4A48] text-xs">Painters {area}</span>
                 </li>
               ))}
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h4 className="text-[#5A5A58] text-[10px] font-medium tracking-[0.12em] uppercase mb-4">
-              Contact
-            </h4>
-            <ul className="flex flex-col gap-3">
-              <li>
-                <a
-                  href="tel:+61395472863"
-                  className="text-[#4A4A48] text-xs hover:text-[#78716C] transition-colors"
-                >
-                  (03) 9547 2863
-                </a>
-              </li>
-              <li>
-                <a
-                  href="mailto:hello@prestigepainters.com.au"
-                  className="text-[#4A4A48] text-xs hover:text-[#78716C] transition-colors"
-                >
-                  hello@prestigepainters.com.au
-                </a>
-              </li>
-              <li>
-                <p className="text-[#4A4A48] text-xs">Melbourne, Victoria 3000</p>
-              </li>
-              <li>
-                <p className="text-[#4A4A48] text-xs leading-relaxed">
-                  Mon–Fri: 7am–5pm
-                  <br />
-                  Saturday: 8am–2pm
-                </p>
-              </li>
             </ul>
           </div>
         </div>
@@ -126,6 +116,7 @@ export default function Footer() {
             </Link>
           </div>
         </div>
+
       </div>
     </footer>
   )
