@@ -5,16 +5,6 @@ import { Plus, Minus } from 'lucide-react'
 
 const faqs = [
   {
-    question: 'How much does house painting cost in South East Melbourne?',
-    answer:
-      'Costs vary by property size, surface condition, number of colours, and access. As a guide, interior painting for a 3-bedroom home in SE Melbourne starts from around $3,500–$5,000. Exterior painting starts from $4,500–$8,000. We return fixed-price written quotes within 24 hours — no hourly rates, no surprises.',
-  },
-  {
-    question: 'Are you licensed and insured to paint in Victoria?',
-    answer:
-      'Yes. We are registered with the Victorian Building Authority (VBA) and carry comprehensive public liability insurance and workers compensation insurance. We provide certificates on request before any job commences.',
-  },
-  {
     question: 'How long does it take to paint a house in South East Melbourne?',
     answer:
       'A typical interior repaint of a 3-bedroom SE Melbourne home takes 3–5 working days. A full interior and exterior repaint takes 7–10 days depending on size and prep requirements. All timelines are confirmed in your written quote before work begins.',
