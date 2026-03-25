@@ -101,7 +101,7 @@ export default function Hero() {
       </div>
 
       {/* Edge fade — blends video into site background on all four sides */}
-      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-[#FAFAF8]/40 via-transparent to-[#FAFAF8]/80" />
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-[#FAFAF8] via-transparent to-[#FAFAF8]/80" style={{ backgroundImage: 'linear-gradient(to bottom, #FAFAF8 0%, #FAFAF8 8%, rgba(250,250,248,0.15) 28%, transparent 50%, rgba(250,250,248,0.8) 100%)' }} />
       <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-[#FAFAF8]/30 via-transparent to-[#FAFAF8]/30" />
 
       {/* Content */}
