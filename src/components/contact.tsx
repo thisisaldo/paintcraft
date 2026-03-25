@@ -54,14 +54,14 @@ export default function Contact() {
                 </div>
               </a>
 
-              <a href="mailto:hello@prestigepainters.com.au" className="flex items-center gap-3 group">
+              <a href="mailto:hello@orbitpaintingmelbourne.com.au" className="flex items-center gap-3 group">
                 <div className="w-9 h-9 rounded-xl bg-white/8 flex items-center justify-center flex-shrink-0">
                   <Mail className="w-4 h-4 text-white/70" strokeWidth={1.5} />
                 </div>
                 <div>
                   <p className="text-white/40 text-xs">Email us</p>
                   <p className="text-white text-sm font-medium group-hover:text-white/75 transition-colors">
-                    hello@prestigepainters.com.au
+                    hello@orbitpaintingmelbourne.com.au
                   </p>
                 </div>
               </a>

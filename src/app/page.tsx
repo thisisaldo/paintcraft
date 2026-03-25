@@ -14,6 +14,8 @@ import ChatWidget from '@/components/chat-widget'
 export default function Home() {
   return (
     <main>
+      {/* Visually hidden H1 — always in DOM for SEO (hero H1 is JS-gated) */}
+      <h1 className="sr-only">House Painters in South East Melbourne | Orbit Painting</h1>
       <Navbar />
       <Hero />
       <ScrollStory />
