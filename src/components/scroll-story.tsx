@@ -2,50 +2,32 @@
 
 import { useEffect, useRef } from 'react'
 
-const CARDS = [
-  {
-    eyebrow: 'Surface Preparation',
-    heading: 'The foundation\nof a lasting finish',
-    body: "Every job starts with meticulous prep — filling, sanding, priming. It's invisible work, but it's the difference between paint that flakes in two years and paint that holds for fifteen.",
-    stat: '3-layer prep',
-    statLabel: 'on every surface',
-  },
-  {
-    eyebrow: 'Colour & Craft',
-    heading: 'Precision cut\nand seamless roll',
-    body: "Our painters hand-cut every edge before a roller ever touches the wall. No tape lines, no bleeding trim — just crisp boundaries and an even finish coat that catches light the right way.",
-    stat: '0.5 mm',
-    statLabel: 'edge tolerance',
-  },
-  {
-    eyebrow: 'Premium Materials',
-    heading: "Products built\nfor Melbourne's climate",
-    body: 'We specify low-VOC, climate-rated paints for every substrate — render, weatherboard, plaster, timber. The right product in the right conditions means colour that stays true season after season.',
-    stat: 'Dulux',
-    statLabel: 'premium products only',
-  },
-]
-
-const CARD_ENTER = [0.05, 0.38, 0.70]
-const CARD_PEAK  = [0.18, 0.50, 0.82]
-const CARD_EXIT  = [0.34, 0.66, 0.98]
+const CARD = {
+  eyebrow: 'South East Melbourne',
+  heading: "We treat your home\nlike it's our own",
+  body: 'From prep to final coat, every job is handled by our local SE Melbourne team — VBA licensed, fully insured, and focused on getting it right the first time. No subcontractors, no shortcuts.',
+  stat: 'SE Melbourne',
+  statLabel: 'local team, every job',
+}
 
 function easeInOut(t: number) {
   return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t
 }
 
-function cardOpacity(p: number, i: number) {
-  const enter = CARD_ENTER[i], peak = CARD_PEAK[i], exit = CARD_EXIT[i]
-  if (p < enter || p > exit) return 0
-  if (p <= peak) return easeInOut((p - enter) / (peak - enter))
-  return easeInOut(1 - (p - peak) / (exit - peak))
+// Fades in over the first 20% of the scroll, then stays fully visible
+function cardOpacity(p: number) {
+  const ENTER = 0.05
+  const FULL  = 0.20
+  if (p < ENTER) return 0
+  if (p >= FULL) return 1
+  return easeInOut((p - ENTER) / (FULL - ENTER))
 }
 
 export default function ScrollStory() {
   const sectionRef  = useRef<HTMLDivElement>(null)
   const videoRef    = useRef<HTMLVideoElement>(null)
   const canvasRef   = useRef<HTMLCanvasElement>(null)
-  const cardRefs    = useRef<(HTMLDivElement | null)[]>([])
+  const cardRef     = useRef<HTMLDivElement | null>(null)
   const hintRef     = useRef<HTMLDivElement>(null)
 
   const durationRef   = useRef(0)
@@ -165,14 +147,14 @@ export default function ScrollStory() {
           pendingSeek.current = true
         }
 
-        // Update cards — direct DOM writes, zero React overhead
-        cardRefs.current.forEach((el, i) => {
-          if (!el) return
-          const op = cardOpacity(p, i)
+        // Update card — direct DOM write, zero React overhead
+        const el = cardRef.current
+        if (el) {
+          const op = cardOpacity(p)
           el.style.opacity = String(op)
           el.style.transform = `translateY(${(1 - op) * 18}px)`
           el.style.pointerEvents = op > 0.1 ? 'auto' : 'none'
-        })
+        }
 
         if (hintRef.current) hintRef.current.style.opacity = String(Math.max(0, 1 - p * 12))
       })
@@ -233,44 +215,41 @@ export default function ScrollStory() {
           }}
         />
 
-        {/* Cards */}
+        {/* Card */}
         <div className="absolute inset-0 flex items-center justify-center px-4">
-          {CARDS.map((card, i) => (
+          <div
+            ref={cardRef}
+            className="max-w-md w-full"
+            style={{ opacity: 0, transform: 'translateY(18px)', pointerEvents: 'none' }}
+          >
             <div
-              key={i}
-              ref={el => { cardRefs.current[i] = el }}
-              className="absolute max-w-md w-full"
-              style={{ opacity: 0, transform: 'translateY(18px)', pointerEvents: 'none' }}
+              className="rounded-2xl border border-black/8 px-5 py-6 md:px-8 md:py-8"
+              style={{
+                background: 'rgba(250,250,248,0.55)',
+                backdropFilter: 'blur(20px)',
+                WebkitBackdropFilter: 'blur(20px)',
+                boxShadow: '0 8px 40px rgba(0,0,0,0.10), inset 0 1px 0 rgba(255,255,255,0.8)',
+              }}
             >
-              <div
-                className="rounded-2xl border border-black/8 px-5 py-6 md:px-8 md:py-8"
-                style={{
-                  background: 'rgba(250,250,248,0.55)',
-                  backdropFilter: 'blur(20px)',
-                  WebkitBackdropFilter: 'blur(20px)',
-                  boxShadow: '0 8px 40px rgba(0,0,0,0.10), inset 0 1px 0 rgba(255,255,255,0.8)',
-                }}
+              <p className="text-[10px] font-medium tracking-[0.18em] text-[#A8A29E] uppercase mb-4">
+                {CARD.eyebrow}
+              </p>
+              <h2
+                className="text-2xl md:text-4xl text-[#111110] leading-tight tracking-tight mb-4 md:mb-5 whitespace-pre-line"
+                style={{ fontFamily: 'var(--font-instrument-serif)' }}
               >
-                <p className="text-[10px] font-medium tracking-[0.18em] text-[#A8A29E] uppercase mb-4">
-                  {card.eyebrow}
-                </p>
-                <h2
-                  className="text-2xl md:text-4xl text-[#111110] leading-tight tracking-tight mb-4 md:mb-5 whitespace-pre-line"
-                  style={{ fontFamily: 'var(--font-instrument-serif)' }}
-                >
-                  {card.heading}
-                </h2>
-                <p className="text-[#78716C] text-sm leading-relaxed mb-5 md:mb-7">{card.body}</p>
-                <div
-                  className="inline-flex items-baseline gap-2 px-4 py-2 rounded-full border border-black/8"
-                  style={{ background: 'rgba(17,17,16,0.05)' }}
-                >
-                  <span className="text-[#111110] text-lg font-semibold tracking-tight">{card.stat}</span>
-                  <span className="text-[#A8A29E] text-xs">{card.statLabel}</span>
-                </div>
+                {CARD.heading}
+              </h2>
+              <p className="text-[#78716C] text-sm leading-relaxed mb-5 md:mb-7">{CARD.body}</p>
+              <div
+                className="inline-flex items-baseline gap-2 px-4 py-2 rounded-full border border-black/8"
+                style={{ background: 'rgba(17,17,16,0.05)' }}
+              >
+                <span className="text-[#111110] text-sm font-semibold tracking-tight">{CARD.stat}</span>
+                <span className="text-[#A8A29E] text-xs">{CARD.statLabel}</span>
               </div>
             </div>
-          ))}
+          </div>
         </div>
 
         {/* Scroll hint */}
