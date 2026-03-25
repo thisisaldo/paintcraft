@@ -51,15 +51,6 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 pb-12 border-b border-white/5">
           {/* Brand */}
           <div>
-            <div className="mb-4">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/orbit-clean.svg"
-                alt="Orbit Painting Melbourne"
-                style={{ height: '32px', width: 'auto', display: 'block', filter: 'brightness(0) invert(1)' }}
-              />
-            </div>
             <p className="text-[#4A4A48] text-xs leading-relaxed mb-5">
               South East Melbourne&apos;s trusted residential and commercial painting specialists.
               Licensed, insured, and delivering flawless results since 2009.

@@ -181,7 +181,7 @@ export default function ScrollStory() {
           className="absolute"
           style={{ opacity: 0, pointerEvents: 'none', width: 1, height: 1 }}
         >
-          <source src="/painting.mp4" type="video/mp4" />
+          <source src="/video2.mp4" type="video/mp4" />
         </video>
 
         {/* Canvas — sized to viewport, drawn with cover-fit math */}

@@ -24,7 +24,8 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-4 pt-5">
       <nav
-        className={`max-w-5xl mx-auto flex items-center justify-between px-6 py-3 rounded-full transition-all duration-500 ${
+        style={{ height: '52px' }}
+        className={`max-w-5xl mx-auto flex items-center justify-between px-6 rounded-full transition-all duration-500 overflow-visible ${
           scrolled
             ? 'bg-white/95 backdrop-blur-sm border border-[#E8E8E5] shadow-[0_2px_20px_rgba(0,0,0,0.06)]'
             : 'bg-transparent'
@@ -36,12 +37,11 @@ export default function Navbar() {
           className="flex shrink-0 items-center cursor-pointer"
           aria-label="Scroll to top"
         >
-          {/* Clip container zooms into the logo's content area (SVG canvas is 1536×1152 with lots of padding) */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/orbit-clean.svg"
+            src="/logo.svg"
             alt="Orbit Painting Melbourne"
-            style={{ height: '36px', width: 'auto', display: 'block' }}
+            style={{ height: '90px', width: 'auto', display: 'block' }}
           />
         </button>
 
