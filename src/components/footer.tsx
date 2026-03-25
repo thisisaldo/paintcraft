@@ -27,8 +27,8 @@ const areaLinks = [
 
 const trustBadges = [
   { label: 'VBA Registered', sub: 'Victorian Building Authority' },
-  { label: '5-Year Guarantee', sub: 'Written, on every job' },
-  { label: '4.9★ Google', sub: '127 verified reviews' },
+  { label: 'Free Detailed Quotes', sub: 'Written, itemised, within 24 hrs' },
+  { label: 'Local SE Melbourne', sub: 'Based in the community we serve' },
   { label: 'Since 2009', sub: '15+ years in SE Melbourne' },
 ]
 

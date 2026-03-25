@@ -21,8 +21,8 @@ const CARDS = [
     eyebrow: 'Premium Materials',
     heading: "Products built\nfor Melbourne's climate",
     body: 'We specify low-VOC, climate-rated paints for every substrate — render, weatherboard, plaster, timber. The right product in the right conditions means colour that stays true season after season.',
-    stat: '5-year',
-    statLabel: 'workmanship guarantee',
+    stat: 'Dulux',
+    statLabel: 'premium products only',
   },
 ]
 

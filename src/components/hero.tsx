@@ -145,8 +145,8 @@ export default function Hero() {
 
               {/* Subtext */}
               <motion.p variants={item} className="text-[#78716C] text-base md:text-lg max-w-[44ch] mx-auto leading-relaxed mb-8">
-                Over 500 homes and businesses transformed across SE Melbourne.
-                No mess, no delays, no surprises — just a finish your neighbours will notice.
+                SE Melbourne&apos;s local painting specialists — serving homes and businesses
+                from St Kilda to Frankston. VBA licensed, fully insured, free quotes within 24 hours.
               </motion.p>
 
               {/* CTAs */}
@@ -169,7 +169,7 @@ export default function Hero() {
 
               {/* Trust line */}
               <motion.div variants={item} className="flex items-center justify-center gap-5 flex-wrap pt-6 border-t border-[#E0DDD9]/60">
-                {['4.9★ Google · 127 Reviews', '5-Year Guarantee', 'VBA Licensed', 'Quotes in 24 hrs'].map((trust) => (
+                {['VBA Licensed & Insured', 'Local SE Melbourne Team', 'No Mess · No Surprises', 'Free Detailed Quotes'].map((trust) => (
                   <span key={trust} className="text-[11px] text-[#A8A29E] tracking-wide">
                     {trust}
                   </span>

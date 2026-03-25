@@ -40,9 +40,9 @@ const faqs = [
       'Yes — we move and protect all furniture, and we take preparation seriously. This includes filling, sanding, priming, and masking all surfaces. Thorough preparation is what separates a paint job that lasts from one that chips within a year. We leave the property clean on completion.',
   },
   {
-    question: 'What is your workmanship guarantee?',
+    question: 'Do you stand behind your work?',
     answer:
-      'We provide a written 5-year workmanship guarantee on all jobs. If any paint defect arises from our application within that period, we return and rectify it at no charge.',
+      'Absolutely. We take pride in every job and if you have a concern with the finish after completion, get in touch and we will come back to assess and sort it out. Our reputation in SE Melbourne is everything to us.',
   },
 ]
 

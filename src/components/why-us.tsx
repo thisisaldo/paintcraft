@@ -27,9 +27,9 @@ const credentials = [
   },
   {
     icon: ThumbsUp,
-    title: '5-Year Guarantee',
+    title: 'Clean & Respectful',
     description:
-      'Written workmanship guarantee on every job. If it fails through our application, we fix it at no cost.',
+      'We protect your floors, furniture, and garden. Every job ends with a full clean-up — we leave your home exactly as we found it, just with better walls.',
   },
   {
     icon: FileCheck,
@@ -43,7 +43,7 @@ const stats = [
   { value: '15+', label: 'Years in SE Melbourne' },
   { value: '2,400+', label: 'Projects completed' },
   { value: '40+', label: 'SE suburbs covered' },
-  { value: '4.9★', label: 'Google rating (127 reviews)' },
+  { value: '100%', label: 'Local SE Melbourne team' },
 ]
 
 export default function WhyUs() {

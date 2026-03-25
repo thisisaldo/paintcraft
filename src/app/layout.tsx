@@ -63,7 +63,7 @@ const localBusinessSchema = {
   '@id': 'https://prestigepainters.com.au/#business',
   name: 'Orbit Painting Melbourne',
   image: 'https://prestigepainters.com.au/og-image.jpg',
-  description: "South East Melbourne's trusted residential and commercial painting specialists. VBA licensed, 5-year guarantee, fixed-price quotes.",
+  description: "South East Melbourne's local residential and commercial painting specialists. VBA licensed, fully insured, free detailed quotes within 24 hours.",
   url: 'https://prestigepainters.com.au',
   telephone: '+61-3-9547-2863',
   email: 'hello@prestigepainters.com.au',
@@ -108,13 +108,6 @@ const localBusinessSchema = {
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Interior Painting Melbourne', description: 'Interior painting, feature walls, and colour consulting for Melbourne properties.' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Exterior Painting Melbourne', description: 'Exterior painting, weatherboard, render, and deck painting across Melbourne.' } },
     ],
-  },
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '4.9',
-    reviewCount: '127',
-    bestRating: '5',
-    worstRating: '1',
   },
 }
 
