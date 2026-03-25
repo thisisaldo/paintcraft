@@ -64,7 +64,7 @@ export default function Hero() {
           className="absolute inset-0 w-full h-full object-cover"
           style={{ opacity: 0.55 }}
         >
-          <source src="/paint-brush.mp4" type="video/mp4" />
+          <source src="/video 1.mp4" type="video/mp4" />
         </video>
       </div>
 
@@ -103,7 +103,7 @@ export default function Hero() {
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
           <button
-            onClick={() => window.dispatchEvent(new Event('paintcraft:open-chat'))}
+            onClick={() => window.dispatchEvent(new Event('orbit:open-chat'))}
             className="flex items-center gap-2 bg-[#111110] text-white text-sm px-6 py-3 rounded-full hover:bg-[#2A2A29] active:scale-[0.98] transition-all duration-200 shadow-[0_2px_16px_rgba(17,17,16,0.18)]"
           >
             Get Free Quote

@@ -36,11 +36,12 @@ export default function Navbar() {
           className="flex shrink-0 items-center cursor-pointer"
           aria-label="Scroll to top"
         >
+          {/* Clip container zooms into the logo's content area (SVG canvas is 1536×1152 with lots of padding) */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/logo.svg"
-            alt="PaintCraft"
-            style={{ height: '40px', width: 'auto', display: 'block', maxWidth: 'none' }}
+            src="/orbit-clean.svg"
+            alt="Orbit Painting Melbourne"
+            style={{ height: '36px', width: 'auto', display: 'block' }}
           />
         </button>
 
@@ -60,7 +61,7 @@ export default function Navbar() {
         {/* CTA */}
         <div className="flex items-center gap-3">
           <button
-            onClick={() => window.dispatchEvent(new Event('paintcraft:open-chat'))}
+            onClick={() => window.dispatchEvent(new Event('orbit:open-chat'))}
             className="hidden md:flex items-center gap-1.5 bg-[#111110] text-white text-sm px-4 py-2 rounded-full hover:bg-[#2A2A29] active:scale-[0.98] transition-all duration-200"
           >
             Free Quote
@@ -92,7 +93,7 @@ export default function Navbar() {
             ))}
             <button
               className="flex items-center justify-center gap-1.5 bg-[#111110] text-white text-sm px-4 py-2.5 rounded-full mt-2"
-              onClick={() => { setMobileOpen(false); window.dispatchEvent(new Event('paintcraft:open-chat')) }}
+              onClick={() => { setMobileOpen(false); window.dispatchEvent(new Event('orbit:open-chat')) }}
             >
               Get Free Quote
               <ArrowRight className="w-3 h-3" />

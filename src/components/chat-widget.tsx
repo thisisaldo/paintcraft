@@ -10,7 +10,7 @@ type Message = {
 
 const GREETING: Message = {
   role: 'assistant',
-  text: "G'day! I'm Mick from PaintCraft. I can help with questions about our services, pricing, suburbs we cover, or get you sorted with a free quote. What can I do for ya?",
+  text: "G'day! I'm Mick from Orbit Painting Melbourne. I can help with questions about our services, pricing, suburbs we cover, or get you sorted with a free quote. What can I do for ya?",
 }
 
 const PLACEHOLDER_REPLY =
@@ -71,8 +71,8 @@ export default function ChatWidget() {
 
   useEffect(() => {
     const onOpen = () => setOpen(true)
-    window.addEventListener('paintcraft:open-chat', onOpen)
-    return () => window.removeEventListener('paintcraft:open-chat', onOpen)
+    window.addEventListener('orbit:open-chat', onOpen)
+    return () => window.removeEventListener('orbit:open-chat', onOpen)
   }, [])
 
   async function sendMessage() {
@@ -112,7 +112,7 @@ export default function ChatWidget() {
           <div className="flex items-center justify-between px-4 py-3 bg-[#111110]">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-green-400" />
-              <span className="text-white text-sm font-medium">Mick — PaintCraft</span>
+              <span className="text-white text-sm font-medium">Mick — Orbit Painting Melbourne</span>
             </div>
             <button
               onClick={() => setOpen(false)}

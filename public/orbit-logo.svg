@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 36" fill="none">
+  <!-- O orbit mark: circle + ring -->
+  <circle cx="18" cy="18" r="7" fill="#111110"/>
+  <ellipse cx="18" cy="18" rx="16" ry="7" stroke="#111110" stroke-width="2" fill="none"/>
+
+  <!-- Wordmark -->
+  <text x="42" y="23" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="15" font-weight="600" letter-spacing="-0.3" fill="#111110">Orbit Painting</text>
+</svg>

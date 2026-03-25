@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 44" fill="none">
+  <!-- Orbit icon: planet body + ring path -->
+  <g transform="translate(22, 22)">
+    <!-- Orbit ring (ellipse tilted) -->
+    <ellipse cx="0" cy="0" rx="18" ry="7" stroke="#111110" stroke-width="2.2" fill="none" transform="rotate(-25)"/>
+    <!-- Planet dot -->
+    <circle cx="0" cy="0" r="6.5" fill="#111110"/>
+    <!-- Ring overlay (front arc, covers planet) -->
+    <path d="M -9 -3.5 Q 0 1 9 -3.5" stroke="#111110" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text
+    x="48"
+    y="27"
+    font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-size="17"
+    font-weight="700"
+    letter-spacing="-0.4"
+    fill="#111110"
+  >OrbitPainting</text>
+</svg>

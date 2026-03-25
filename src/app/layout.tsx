@@ -13,8 +13,8 @@ const instrumentSerif = Instrument_Serif({
 
 export const metadata: Metadata = {
   title: {
-    default: 'PaintCraft Melbourne | Residential & Commercial Painting',
-    template: '%s | PaintCraft Melbourne',
+    default: 'Orbit Painting Melbourne | Residential & Commercial Painting',
+    template: '%s | Orbit Painting Melbourne',
   },
   description:
     "South East Melbourne's trusted painting specialists. Expert residential and commercial painters serving Dandenong, Oakleigh, Clayton, Frankston, Narre Warren, Berwick, Cheltenham, St Kilda and all SE Melbourne suburbs. Licensed, insured, 15+ years experience.",
@@ -32,22 +32,22 @@ export const metadata: Metadata = {
     'painting contractor Melbourne',
     'Melbourne painting company',
   ],
-  authors: [{ name: 'PaintCraft Melbourne' }],
+  authors: [{ name: 'Orbit Painting Melbourne' }],
   metadataBase: new URL('https://prestigepainters.com.au'),
   alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
     locale: 'en_AU',
     url: 'https://prestigepainters.com.au',
-    siteName: 'PaintCraft Melbourne',
-    title: 'PaintCraft Melbourne | Residential & Commercial Painting',
+    siteName: 'Orbit Painting Melbourne',
+    title: 'Orbit Painting Melbourne | Residential & Commercial Painting',
     description:
       "South East Melbourne's trusted painting specialists. Residential and commercial painters serving Dandenong, Oakleigh, Clayton, Frankston, Cheltenham, St Kilda and the entire SE corridor.",
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'PaintCraft Melbourne' }],
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Orbit Painting Melbourne' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'PaintCraft Melbourne | Residential & Commercial Painting',
+    title: 'Orbit Painting Melbourne | Residential & Commercial Painting',
     description: "Melbourne's trusted painting specialists.",
   },
   robots: {
@@ -61,7 +61,7 @@ const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   '@id': 'https://prestigepainters.com.au/#business',
-  name: 'PaintCraft Melbourne',
+  name: 'Orbit Painting Melbourne',
   image: 'https://prestigepainters.com.au/og-image.jpg',
   description: "South East Melbourne's trusted residential and commercial painting specialists. VBA licensed, 5-year guarantee, fixed-price quotes.",
   url: 'https://prestigepainters.com.au',

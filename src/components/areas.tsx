@@ -1,3 +1,7 @@
+'use client'
+
+import { useEffect, useRef } from 'react'
+
 const areaGroups = [
   {
     region: 'Melbourne CBD',
@@ -67,9 +71,48 @@ const areaGroups = [
 ]
 
 export default function ServiceAreas() {
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const sectionRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play()
+        } else {
+          video.pause()
+        }
+      },
+      { threshold: 0.1 }
+    )
+
+    if (sectionRef.current) observer.observe(sectionRef.current)
+    return () => observer.disconnect()
+  }, [])
+
   return (
-    <section id="areas" className="relative py-24 px-4 bg-[#FAFAF8] overflow-hidden">
-      <div className="max-w-5xl mx-auto">
+    <section ref={sectionRef} id="areas" className="relative py-24 px-4 bg-[#FAFAF8] overflow-hidden">
+
+      {/* Background video */}
+      <video
+        ref={videoRef}
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ opacity: 0.38 }}
+      >
+        <source src="/video 4.mp4" type="video/mp4" />
+      </video>
+
+      {/* Blend into #FAFAF8 on all four edges */}
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-[#FAFAF8] via-[#FAFAF8]/20 to-[#FAFAF8]" />
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-[#FAFAF8]/60 via-transparent to-[#FAFAF8]/60" />
+
+      <div className="relative z-10 max-w-5xl mx-auto">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
           <div>
@@ -111,7 +154,7 @@ export default function ServiceAreas() {
         </div>
 
         {/* Callout */}
-        <div className="mt-14 p-8 md:p-10 rounded-2xl bg-[#FAFAF8] border border-[#E8E8E5] flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div className="mt-14 p-8 md:p-10 rounded-2xl bg-white/60 backdrop-blur-sm border border-[#E8E8E5] flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div>
             <h3 className="text-[#111110] font-medium text-sm mb-1">
               Don&apos;t see your suburb listed?
@@ -128,7 +171,6 @@ export default function ServiceAreas() {
           </a>
         </div>
       </div>
-      <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-b from-transparent to-[#FAFAF8] pointer-events-none" />
     </section>
   )
 }

@@ -11,7 +11,7 @@ const highlights = [
 
 export default function Contact() {
   function openChat() {
-    window.dispatchEvent(new Event('paintcraft:open-chat'))
+    window.dispatchEvent(new Event('orbit:open-chat'))
   }
 
   return (

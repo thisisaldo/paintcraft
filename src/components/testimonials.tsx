@@ -22,7 +22,7 @@ const testimonials = [
   },
   {
     quote:
-      'Third time using PaintCraft. They\'ve done our investment property in Clayton, our home in Cheltenham, and now our office in South Melbourne. The consistency across jobs and crews is what keeps us coming back.',
+      'Third time using Orbit Painting Melbourne. They\'ve done our investment property in Clayton, our home in Cheltenham, and now our office in South Melbourne. The consistency across jobs and crews is what keeps us coming back.',
     author: 'Robert H.',
     location: 'Cheltenham',
     service: 'Repeat Client — Residential & Commercial',

@@ -53,14 +53,19 @@ export default function Footer() {
           <div>
             <div className="mb-4">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo.svg" alt="PaintCraft" style={{ height: '36px', width: 'auto', display: 'block', maxWidth: 'none' }} />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/orbit-clean.svg"
+                alt="Orbit Painting Melbourne"
+                style={{ height: '32px', width: 'auto', display: 'block', filter: 'brightness(0) invert(1)' }}
+              />
             </div>
             <p className="text-[#4A4A48] text-xs leading-relaxed mb-5">
               South East Melbourne&apos;s trusted residential and commercial painting specialists.
               Licensed, insured, and delivering flawless results since 2009.
             </p>
             <button
-              onClick={() => window.dispatchEvent(new Event('paintcraft:open-chat'))}
+              onClick={() => window.dispatchEvent(new Event('orbit:open-chat'))}
               className="inline-flex items-center gap-2 text-[#4A4A48] text-xs hover:text-[#78716C] transition-colors"
             >
               <MessageCircle className="w-3.5 h-3.5" />
@@ -105,7 +110,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pt-8">
           <p className="text-[#3A3A38] text-xs">
-            © {new Date().getFullYear()} PaintCraft Melbourne. All rights reserved.
+            © {new Date().getFullYear()} Orbit Painting Melbourne. All rights reserved.
           </p>
           <div className="flex gap-5">
             <Link href="#" className="text-[#3A3A38] text-xs hover:text-[#4A4A48] transition-colors">
