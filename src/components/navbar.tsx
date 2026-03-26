@@ -87,7 +87,7 @@ export default function Navbar() {
                     <Link
                       key={item.href}
                       href={item.href}
-                      className="flex items-start gap-3 p-3 rounded-xl hover:bg-[#FAFAF8] transition-colors group"
+                      className="flex items-start gap-3 p-3 rounded-xl hover:bg-[#FAFAF8] transition-colors group cursor-pointer"
                     >
                       <div className="w-8 h-8 rounded-lg bg-[#F4F3F1] flex items-center justify-center flex-shrink-0 group-hover:bg-[#EEECE9] transition-colors">
                         <Icon className="w-3.5 h-3.5 text-[#111110]" strokeWidth={1.5} />
@@ -99,15 +99,6 @@ export default function Navbar() {
                     </Link>
                   )
                 })}
-                <div className="border-t border-[#E8E8E5] mt-1 pt-1">
-                  <Link
-                    href="/#services"
-                    className="flex items-center gap-1.5 px-3 py-2 text-[#A8A29E] text-xs hover:text-[#78716C] transition-colors"
-                  >
-                    View all services
-                    <ArrowRight className="w-3 h-3" />
-                  </Link>
-                </div>
               </div>
             </div>
           </div>
