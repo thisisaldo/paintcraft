@@ -14,11 +14,11 @@ export interface BlogPost {
 
 export const posts: BlogPost[] = [
   {
-    slug: 'house-painting-cost-melbourne-2025',
-    title: 'How Much Does It Cost to Paint a House in Melbourne? (2025 Guide)',
+    slug: 'house-painting-cost-melbourne-2026',
+    title: 'How Much Does It Cost to Paint a House in Melbourne? (2026 Guide)',
     description:
       'A straight-talking breakdown of painting costs for South East Melbourne homes — interior, exterior, and full repaint. What affects the price and how to get an accurate quote.',
-    date: '2025-03-10',
+    date: '2026-03-10',
     readTime: '6 min read',
     category: 'Pricing',
   },
@@ -27,7 +27,7 @@ export const posts: BlogPost[] = [
     title: 'Weatherboard Painting in South East Melbourne: A Complete Guide',
     description:
       'Everything you need to know about painting weatherboard homes in SE Melbourne — preparation, paint types, how often to repaint, and what to watch out for.',
-    date: '2025-02-18',
+    date: '2026-02-18',
     readTime: '7 min read',
     category: 'Exterior Painting',
   },
@@ -36,7 +36,7 @@ export const posts: BlogPost[] = [
     title: 'How to Choose the Right Paint Colours for Your Melbourne Home',
     description:
       'Practical advice from an SE Melbourne painter on picking colours that work — undertones, natural light, popular palettes, and how to avoid expensive mistakes.',
-    date: '2025-01-30',
+    date: '2026-01-30',
     readTime: '5 min read',
     category: 'Colour & Design',
   },
@@ -45,7 +45,7 @@ export const posts: BlogPost[] = [
     title: 'Interior vs Exterior Painting: Which Should You Do First?',
     description:
       'The right order matters more than most homeowners realise. We break down the practical reasons to sequence your repaint correctly — and when to do both together.',
-    date: '2024-12-12',
+    date: '2026-01-12',
     readTime: '4 min read',
     category: 'Tips & Advice',
   },
@@ -54,7 +54,7 @@ export const posts: BlogPost[] = [
     title: 'How to Prepare Your Home Before the Painters Arrive',
     description:
       'A simple checklist of what to do — and what NOT to do — before your SE Melbourne painting job starts. Save time and make sure the job goes smoothly.',
-    date: '2024-11-20',
+    date: '2025-12-20',
     readTime: '4 min read',
     category: 'Tips & Advice',
   },
@@ -65,14 +65,14 @@ export interface BlogPostFull extends BlogPost {
 }
 
 export const postContent: Record<string, BlogSection[]> = {
-  'house-painting-cost-melbourne-2025': [
+  'house-painting-cost-melbourne-2026': [
     {
       type: 'p',
       content: `One of the most common questions we get at Orbit Painting Melbourne is "how much will it cost?" It's a fair question — and one that deserves a straight answer rather than a vague "it depends." This guide gives you real numbers for South East Melbourne homes, along with the factors that move the price up or down.`,
     },
     {
       type: 'h2',
-      content: 'Typical Costs for Interior Painting in Melbourne (2025)',
+      content: 'Typical Costs for Interior Painting in Melbourne (2026)',
     },
     {
       type: 'p',
@@ -298,7 +298,7 @@ export const postContent: Record<string, BlogSection[]> = {
         'Warm limewash whites (Dulux Natural White, Taubmans Whisper White) — timeless and versatile',
         'Greyed neutrals with warm undertones (Dulux Vivid White, Haymes Pure White) — clean without being clinical',
         'Deep charcoal exteriors with crisp white trim — popular on weatherboard homes in Bentleigh and Carnegie',
-        'Earthy terracotta and sage combinations for feature walls — strong in 2024–2025 interiors',
+        'Earthy terracotta and sage combinations for feature walls — strong in 2025–2026 interiors',
       ],
     },
     {
