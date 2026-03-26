@@ -1,6 +1,6 @@
 'use client'
 
-import { Phone, Mail, Clock, MessageCircle, ArrowRight, CheckCircle } from 'lucide-react'
+import { Phone, Mail, Clock, MapPin, MessageCircle, ArrowRight, CheckCircle } from 'lucide-react'
 
 const highlights = [
   'Fixed-price written quote within 24 hours',
@@ -77,6 +77,21 @@ export default function Contact() {
                   </p>
                 </div>
               </div>
+
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-xl bg-white/8 flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-4 h-4 text-white/70" strokeWidth={1.5} />
+                </div>
+                <div>
+                  <p className="text-white/40 text-xs">Service area</p>
+                  <p className="text-white text-sm font-medium">
+                    South East Melbourne, VIC
+                  </p>
+                  <p className="text-white/30 text-xs mt-0.5">
+                    St Kilda · Caulfield · Oakleigh · Clayton · Dandenong · Frankston and 40+ more suburbs
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -126,6 +141,20 @@ export default function Contact() {
             </div>
           </div>
 
+        </div>
+
+        {/* Google Maps — service area */}
+        <div className="mt-12 rounded-2xl overflow-hidden border border-white/10" style={{ height: '320px' }}>
+          <iframe
+            src="https://maps.google.com/maps?q=South+East+Melbourne,+VIC,+Australia&t=m&z=10&output=embed&iwloc=near"
+            width="100%"
+            height="100%"
+            style={{ border: 0, filter: 'grayscale(20%) invert(5%)' }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Orbit Painting Melbourne — South East Melbourne service area"
+          />
         </div>
       </div>
     </section>

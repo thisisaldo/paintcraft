@@ -1,15 +1,15 @@
 'use client'
 
 import Link from 'next/link'
-import { MessageCircle } from 'lucide-react'
+import { MessageCircle, Phone, Mail, MapPin } from 'lucide-react'
 
 const serviceLinks = [
-  { label: 'Residential Painting', href: '#services' },
-  { label: 'Commercial Painting', href: '#services' },
-  { label: 'Interior Painting', href: '#services' },
-  { label: 'Exterior Painting', href: '#services' },
-  { label: 'Strata Painting', href: '#services' },
-  { label: 'Colour Consulting', href: '#services' },
+  { label: 'Residential Painting', href: '/services/residential-painting' },
+  { label: 'Commercial Painting', href: '/services/commercial-painting' },
+  { label: 'Interior Painting', href: '/#services' },
+  { label: 'Exterior Painting', href: '/#services' },
+  { label: 'Strata Painting', href: '/#services' },
+  { label: 'Colour Consulting', href: '/#services' },
 ]
 
 const areaLinks = [
@@ -49,12 +49,35 @@ export default function Footer() {
 
         {/* Main grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 pb-12 border-b border-white/5">
-          {/* Brand */}
+          {/* Brand + NAP */}
           <div>
             <p className="text-[#4A4A48] text-xs leading-relaxed mb-5">
               South East Melbourne&apos;s trusted residential and commercial painting specialists.
               Licensed, insured, and delivering flawless results since 2009.
             </p>
+
+            {/* NAP — Name · Address · Phone */}
+            <address className="not-italic flex flex-col gap-2.5 mb-5">
+              <a
+                href="tel:+61395472863"
+                className="inline-flex items-center gap-2 text-[#4A4A48] text-xs hover:text-[#78716C] transition-colors"
+              >
+                <Phone className="w-3 h-3 flex-shrink-0" />
+                (03) 9547 2863
+              </a>
+              <a
+                href="mailto:hello@orbitpaintingmelbourne.com.au"
+                className="inline-flex items-center gap-2 text-[#4A4A48] text-xs hover:text-[#78716C] transition-colors"
+              >
+                <Mail className="w-3 h-3 flex-shrink-0" />
+                hello@orbitpaintingmelbourne.com.au
+              </a>
+              <span className="inline-flex items-start gap-2 text-[#4A4A48] text-xs">
+                <MapPin className="w-3 h-3 flex-shrink-0 mt-0.5" />
+                <span>Serving South East Melbourne, VIC<br />St Kilda to Frankston · 40+ suburbs</span>
+              </span>
+            </address>
+
             <button
               onClick={() => window.dispatchEvent(new Event('orbit:open-chat'))}
               className="inline-flex items-center gap-2 text-[#4A4A48] text-xs hover:text-[#78716C] transition-colors"

@@ -159,7 +159,7 @@ export default function Hero() {
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
                 <Link
-                  href="#portfolio"
+                  href="/#portfolio"
                   className="flex items-center gap-1.5 text-[#78716C] text-sm hover:text-[#111110] transition-colors duration-200"
                 >
                   See recent work
