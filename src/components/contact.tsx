@@ -42,14 +42,14 @@ export default function Contact() {
             </div>
 
             <div className="flex flex-col gap-5">
-              <a href="tel:+61395472863" className="flex items-center gap-3 group">
+              <a href="tel:+61493929947" className="flex items-center gap-3 group">
                 <div className="w-9 h-9 rounded-xl bg-white/8 flex items-center justify-center flex-shrink-0">
                   <Phone className="w-4 h-4 text-white/70" strokeWidth={1.5} />
                 </div>
                 <div>
                   <p className="text-white/40 text-xs">Call us directly</p>
                   <p className="text-white text-sm font-medium group-hover:text-white/75 transition-colors">
-                    (03) 9547 2863
+                    0493 929 947
                   </p>
                 </div>
               </a>
@@ -132,10 +132,10 @@ export default function Contact() {
                 Start free quote chat
               </button>
               <a
-                href="tel:+61395472863"
+                href="tel:+61493929947"
                 className="flex items-center justify-center gap-1.5 text-[#78716C] text-sm hover:text-white transition-colors py-1"
               >
-                Prefer to call? (03) 9547 2863
+                Prefer to call? 0493 929 947
                 <ArrowRight className="w-3.5 h-3.5" />
               </a>
             </div>

@@ -59,11 +59,11 @@ export default function Footer() {
             {/* NAP — Name · Address · Phone */}
             <address className="not-italic flex flex-col gap-2.5 mb-5">
               <a
-                href="tel:+61395472863"
+                href="tel:+61493929947"
                 className="inline-flex items-center gap-2 text-[#4A4A48] text-xs hover:text-[#78716C] transition-colors"
               >
                 <Phone className="w-3 h-3 flex-shrink-0" />
-                (03) 9547 2863
+                0493 929 947
               </a>
               <a
                 href="mailto:hello@orbitpaintingmelbourne.com.au"
