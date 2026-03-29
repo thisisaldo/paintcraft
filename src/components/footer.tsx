@@ -63,7 +63,7 @@ export default function Footer() {
                 className="inline-flex items-center gap-2 text-[#4A4A48] text-xs hover:text-[#78716C] transition-colors"
               >
                 <Phone className="w-3 h-3 flex-shrink-0" />
-                +61 (3) 4427 9403
+                +61 3 4427 9403
               </a>
               <a
                 href="mailto:hello@orbitpaintingmelbourne.com.au"
