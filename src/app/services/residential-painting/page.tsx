@@ -20,6 +20,16 @@ export const metadata: Metadata = {
   },
 }
 
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.orbitpaintingmelbourne.com.au' },
+    { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://www.orbitpaintingmelbourne.com.au/#services' },
+    { '@type': 'ListItem', position: 3, name: 'Residential Painting', item: 'https://www.orbitpaintingmelbourne.com.au/services/residential-painting' },
+  ],
+}
+
 const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
@@ -160,6 +170,10 @@ export default function ResidentialPaintingPage() {
     <main>
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
       <script
@@ -207,11 +221,11 @@ export default function ResidentialPaintingPage() {
                   Get Free Quote
                 </OpenChatButton>
                 <a
-                  href="tel:+61395472863"
+                  href="tel:+61493929947"
                   className="inline-flex items-center gap-2 border border-[#E8E8E5] text-[#111110] text-sm px-5 py-2.5 rounded-full hover:border-[#D6D3CF] hover:bg-white transition-all duration-200"
                 >
                   <Phone className="w-3.5 h-3.5" />
-                  (03) 9547 2863
+                  0493 929 947
                 </a>
               </div>
             </div>
@@ -381,11 +395,11 @@ export default function ResidentialPaintingPage() {
               Get Free Quote
             </OpenChatButton>
             <a
-              href="tel:+61395472863"
+              href="tel:+61493929947"
               className="inline-flex items-center gap-2 border border-white/10 text-white text-sm px-6 py-3 rounded-full hover:border-white/20 transition-all duration-200"
             >
               <Phone className="w-3.5 h-3.5" />
-              (03) 9547 2863
+              0493 929 947
             </a>
           </div>
           <p className="text-[#3A3A38] text-xs mt-8">

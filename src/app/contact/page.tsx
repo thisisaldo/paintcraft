@@ -7,7 +7,7 @@ import ChatWidget from '@/components/chat-widget'
 import OpenChatButton from '@/components/open-chat-button'
 
 export const metadata: Metadata = {
-  title: 'Contact | Orbit Painting Melbourne',
+  title: 'Get a Free Quote | Contact Orbit Painting Melbourne',
   description:
     'Get in touch with Orbit Painting Melbourne. Free written quotes within 24 hours for residential and commercial painting across South East Melbourne. Call 0493 929 947.',
   alternates: { canonical: '/contact' },
@@ -17,6 +17,15 @@ export const metadata: Metadata = {
       'Free written quotes within 24 hours. Residential and commercial painters serving South East Melbourne.',
     url: 'https://www.orbitpaintingmelbourne.com.au/contact',
   },
+}
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.orbitpaintingmelbourne.com.au' },
+    { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://www.orbitpaintingmelbourne.com.au/contact' },
+  ],
 }
 
 const contactSchema = {
@@ -59,6 +68,10 @@ const contactDetails = [
 export default function ContactPage() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}

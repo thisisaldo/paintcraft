@@ -49,6 +49,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Orbit Painting Melbourne | Residential & Commercial Painting',
     description: "Melbourne's trusted painting specialists.",
+    images: ['/og-image.jpg'],
   },
   robots: {
     index: true,
@@ -59,7 +60,7 @@ export const metadata: Metadata = {
 
 const localBusinessSchema = {
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
+  '@type': ['HomeAndConstructionBusiness', 'LocalBusiness'],
   '@id': 'https://www.orbitpaintingmelbourne.com.au/#business',
   name: 'Orbit Painting Melbourne',
   image: 'https://www.orbitpaintingmelbourne.com.au/og-image.jpg',
@@ -69,15 +70,15 @@ const localBusinessSchema = {
   email: 'hello@orbitpaintingmelbourne.com.au',
   address: {
     '@type': 'PostalAddress',
-    addressLocality: 'Melbourne',
+    addressLocality: 'Clayton',
     addressRegion: 'VIC',
-    postalCode: '3000',
+    postalCode: '3168',
     addressCountry: 'AU',
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: -37.8136,
-    longitude: 144.9631,
+    latitude: -37.9231,
+    longitude: 145.1233,
   },
   openingHoursSpecification: [
     {

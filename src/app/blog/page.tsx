@@ -7,7 +7,7 @@ import ChatWidget from '@/components/chat-widget'
 import { posts, formatDate } from '@/lib/blog-posts'
 
 export const metadata: Metadata = {
-  title: 'Painting Tips & Advice | Blog',
+  title: 'Painting Tips & Advice',
   description:
     'Expert painting advice for South East Melbourne homeowners — colour guides, cost breakdowns, prep tips, and local know-how from a VBA licensed SE Melbourne painter.',
   alternates: { canonical: '/blog' },
@@ -17,6 +17,15 @@ export const metadata: Metadata = {
       'Practical painting advice for SE Melbourne homes — costs, colours, weatherboard guides, and more.',
     url: 'https://www.orbitpaintingmelbourne.com.au/blog',
   },
+}
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.orbitpaintingmelbourne.com.au' },
+    { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.orbitpaintingmelbourne.com.au/blog' },
+  ],
 }
 
 const categoryColours: Record<string, string> = {
@@ -31,6 +40,10 @@ export default function BlogPage() {
 
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Navbar />
 
       {/* Hero */}

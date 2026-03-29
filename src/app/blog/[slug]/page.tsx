@@ -111,12 +111,23 @@ export default async function BlogPostPage({
 
   const related = getRelatedPosts(slug, 2)
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.orbitpaintingmelbourne.com.au' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.orbitpaintingmelbourne.com.au/blog' },
+      { '@type': 'ListItem', position: 3, name: post.title, item: `https://www.orbitpaintingmelbourne.com.au/blog/${post.slug}` },
+    ],
+  }
+
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline: post.title,
     description: post.description,
     datePublished: post.date,
+    dateModified: post.date,
     author: {
       '@type': 'Organization',
       name: 'Orbit Painting Melbourne',
@@ -135,6 +146,10 @@ export default async function BlogPostPage({
 
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
