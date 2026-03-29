@@ -9,7 +9,7 @@ import OpenChatButton from '@/components/open-chat-button'
 export const metadata: Metadata = {
   title: 'Contact | Orbit Painting Melbourne',
   description:
-    'Get in touch with Orbit Painting Melbourne. Free written quotes within 24 hours for residential and commercial painting across South East Melbourne. Call 0493 929 947.',
+    'Get in touch with Orbit Painting Melbourne. Free written quotes within 24 hours for residential and commercial painting across South East Melbourne. Call +61 (3) 4427 9403.',
   alternates: { canonical: '/contact' },
   openGraph: {
     title: 'Contact Orbit Painting Melbourne',
@@ -28,7 +28,7 @@ const contactSchema = {
     '@type': 'LocalBusiness',
     '@id': 'https://www.orbitpaintingmelbourne.com.au/#business',
     name: 'Orbit Painting Melbourne',
-    telephone: '+61493929947',
+    telephone: '+61344279403',
     email: 'hello@orbitpaintingmelbourne.com.au',
     openingHours: ['Mo-Fr 07:00-17:00', 'Sa 08:00-14:00'],
   },
@@ -45,8 +45,8 @@ const contactDetails = [
   {
     icon: Phone,
     label: 'Call us directly',
-    value: '0493 929 947',
-    href: 'tel:+61493929947',
+    value: '+61 (3) 4427 9403',
+    href: 'tel:+61344279403',
   },
   {
     icon: Mail,
@@ -101,11 +101,11 @@ export default function ContactPage() {
                   Start free quote chat
                 </OpenChatButton>
                 <a
-                  href="tel:+61493929947"
+                  href="tel:+61344279403"
                   className="inline-flex items-center gap-2 border border-[#E8E8E5] text-[#111110] text-sm px-5 py-2.5 rounded-full hover:border-[#D6D3CF] hover:bg-white transition-all duration-200"
                 >
                   <Phone className="w-3.5 h-3.5" />
-                  0493 929 947
+                  +61 (3) 4427 9403
                 </a>
               </div>
             </div>
@@ -226,10 +226,10 @@ export default function ContactPage() {
                   Start free quote chat
                 </OpenChatButton>
                 <a
-                  href="tel:+61493929947"
+                  href="tel:+61344279403"
                   className="flex items-center justify-center gap-1.5 text-[#78716C] text-sm hover:text-white transition-colors py-1"
                 >
-                  Prefer to call? 0493 929 947
+                  Prefer to call? +61 (3) 4427 9403
                   <ArrowRight className="w-3.5 h-3.5" />
                 </a>
               </div>

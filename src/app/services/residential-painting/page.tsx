@@ -207,7 +207,7 @@ export default function ResidentialPaintingPage() {
                   Get Free Quote
                 </OpenChatButton>
                 <a
-                  href="tel:+61395472863"
+                  href="tel:+61344279403"
                   className="inline-flex items-center gap-2 border border-[#E8E8E5] text-[#111110] text-sm px-5 py-2.5 rounded-full hover:border-[#D6D3CF] hover:bg-white transition-all duration-200"
                 >
                   <Phone className="w-3.5 h-3.5" />
@@ -381,7 +381,7 @@ export default function ResidentialPaintingPage() {
               Get Free Quote
             </OpenChatButton>
             <a
-              href="tel:+61395472863"
+              href="tel:+61344279403"
               className="inline-flex items-center gap-2 border border-white/10 text-white text-sm px-6 py-3 rounded-full hover:border-white/20 transition-all duration-200"
             >
               <Phone className="w-3.5 h-3.5" />

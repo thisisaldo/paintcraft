@@ -65,7 +65,7 @@ const localBusinessSchema = {
   image: 'https://www.orbitpaintingmelbourne.com.au/og-image.jpg',
   description: "South East Melbourne's local residential and commercial painting specialists. VBA licensed, fully insured, free detailed quotes within 24 hours.",
   url: 'https://www.orbitpaintingmelbourne.com.au',
-  telephone: '+61493929947',
+  telephone: '+61344279403',
   email: 'hello@orbitpaintingmelbourne.com.au',
   address: {
     '@type': 'PostalAddress',

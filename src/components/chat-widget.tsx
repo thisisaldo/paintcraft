@@ -14,7 +14,7 @@ const GREETING: Message = {
 }
 
 const PLACEHOLDER_REPLY =
-  "Thanks for your message! Our AI assistant is coming soon. In the meantime, call us on 0493 929 947 or use the contact form below."
+  "Thanks for your message! Our AI assistant is coming soon. In the meantime, call us on +61 (3) 4427 9403 or use the contact form below."
 
 export default function ChatWidget() {
   const [open, setOpen] = useState(false)
@@ -90,7 +90,7 @@ export default function ChatWidget() {
     } catch {
       setMessages((prev) => [
         ...prev,
-        { role: 'assistant', text: 'Sorry, something went wrong. Please try calling us on 0493 929 947.' },
+        { role: 'assistant', text: 'Sorry, something went wrong. Please try calling us on +61 (3) 4427 9403.' },
       ])
     } finally {
       setLoading(false)

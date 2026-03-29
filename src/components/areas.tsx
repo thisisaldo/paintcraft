@@ -164,10 +164,10 @@ export default function ServiceAreas() {
             </p>
           </div>
           <a
-            href="tel:+61493929947"
+            href="tel:+61344279403"
             className="flex-shrink-0 w-full md:w-auto flex items-center justify-center gap-2 bg-[#111110] text-white text-sm px-5 py-2.5 rounded-full hover:bg-[#2A2A29] active:scale-[0.98] transition-all duration-200"
           >
-            Call 0493 929 947
+            Call +61 (3) 4427 9403
           </a>
         </div>
       </div>

@@ -157,7 +157,7 @@ export const postContent: Record<string, BlogSection[]> = {
     {
       type: 'p',
       content:
-        'At Orbit Painting Melbourne, we provide free, detailed, itemised quotes for homes across South East Melbourne — returned within 24 hours of our site visit. Call us on 0493 929 947 or chat with Mick to get started.',
+        'At Orbit Painting Melbourne, we provide free, detailed, itemised quotes for homes across South East Melbourne — returned within 24 hours of our site visit. Call us on +61 (3) 4427 9403 or chat with Mick to get started.',
     },
   ],
 
@@ -237,7 +237,7 @@ export const postContent: Record<string, BlogSection[]> = {
     {
       type: 'p',
       content:
-        "We've painted weatherboard homes across Caulfield, Carnegie, Bentleigh, Cheltenham, and throughout the SE Melbourne corridor for over 15 years. If you'd like a free, detailed quote for your weatherboard repaint, call us on 0493 929 947 or chat with Mick today.",
+        "We've painted weatherboard homes across Caulfield, Carnegie, Bentleigh, Cheltenham, and throughout the SE Melbourne corridor for over 15 years. If you'd like a free, detailed quote for your weatherboard repaint, call us on +61 (3) 4427 9403 or chat with Mick today.",
     },
   ],
 
@@ -317,7 +317,7 @@ export const postContent: Record<string, BlogSection[]> = {
     {
       type: 'p',
       content:
-        'At Orbit Painting Melbourne, colour consulting is included with every quote at no extra cost. We work with the full Dulux, Taubmans, and Haymes ranges and help you get from shortlist to final palette. Call 0493 929 947 or chat with Mick to get started.',
+        'At Orbit Painting Melbourne, colour consulting is included with every quote at no extra cost. We work with the full Dulux, Taubmans, and Haymes ranges and help you get from shortlist to final palette. Call +61 (3) 4427 9403 or chat with Mick to get started.',
     },
   ],
 
@@ -383,7 +383,7 @@ export const postContent: Record<string, BlogSection[]> = {
     {
       type: 'p',
       content:
-        'Questions about sequencing your project? Chat with Mick or call 0493 929 947 for honest advice and a free quote.',
+        'Questions about sequencing your project? Chat with Mick or call +61 (3) 4427 9403 for honest advice and a free quote.',
     },
   ],
 
@@ -466,7 +466,7 @@ export const postContent: Record<string, BlogSection[]> = {
     {
       type: 'p',
       content:
-        "If you're in SE Melbourne and want a quote for your next interior or exterior repaint, chat with Mick or call us on 0493 929 947.",
+        "If you're in SE Melbourne and want a quote for your next interior or exterior repaint, chat with Mick or call us on +61 (3) 4427 9403.",
     },
   ],
 }
