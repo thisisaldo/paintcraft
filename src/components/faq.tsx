@@ -62,7 +62,7 @@ export default function FAQ() {
             Questions
           </p>
           <h2
-            className="text-4xl md:text-5xl text-[#111110] leading-tight tracking-tight"
+            className="text-[2.4rem] leading-tight tracking-tight text-[#111110] sm:text-4xl md:text-5xl"
             style={{ fontFamily: 'var(--font-instrument-serif)' }}
           >
             Frequently asked

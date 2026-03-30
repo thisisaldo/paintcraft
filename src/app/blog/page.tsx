@@ -38,7 +38,7 @@ export default function BlogPage() {
         <div className="max-w-5xl mx-auto">
           <nav
             aria-label="Breadcrumb"
-            className="flex items-center gap-2 text-[11px] text-[#A8A29E] uppercase tracking-[0.12em] font-medium mb-10"
+            className="mb-10 flex flex-wrap items-center gap-2 text-[11px] font-medium uppercase tracking-[0.12em] text-[#A8A29E]"
           >
             <Link href="/" className="hover:text-[#78716C] transition-colors">Home</Link>
             <span>/</span>
@@ -51,7 +51,7 @@ export default function BlogPage() {
                 Painting advice
               </p>
               <h1
-                className="text-4xl md:text-5xl text-[#111110] leading-tight tracking-tight"
+                className="text-[2.4rem] leading-tight tracking-tight text-[#111110] sm:text-4xl md:text-5xl"
                 style={{ fontFamily: 'var(--font-instrument-serif)' }}
               >
                 Tips, guides &amp;
@@ -82,7 +82,7 @@ export default function BlogPage() {
               {/* Content */}
               <div className="lg:col-span-3 p-8 md:p-10 flex flex-col justify-between gap-6">
                 <div>
-                  <div className="flex items-center gap-3 mb-4">
+                  <div className="mb-4 flex flex-wrap items-center gap-3">
                     <span
                       className={`inline-flex text-[10px] font-medium tracking-[0.1em] uppercase px-2.5 py-1 rounded-full border ${categoryColours[featured.category] ?? 'bg-[#F4F3F1] text-[#78716C] border-[#E8E8E5]'}`}
                     >
@@ -98,8 +98,8 @@ export default function BlogPage() {
                   </h2>
                   <p className="text-[#78716C] text-sm leading-relaxed">{featured.description}</p>
                 </div>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                  <div className="flex flex-wrap items-center gap-3">
                     <span className="text-[#A8A29E] text-xs">{formatDate(featured.date)}</span>
                     <span className="text-[#E8E8E5]">·</span>
                     <span className="text-[#A8A29E] text-xs">{featured.readTime}</span>
@@ -118,7 +118,7 @@ export default function BlogPage() {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group bg-[#FAFAF8] p-8 flex flex-col gap-5 hover:bg-white transition-colors duration-300"
+                className="group flex flex-col gap-5 bg-[#FAFAF8] p-6 transition-colors duration-300 hover:bg-white sm:p-8"
               >
                 <div className="flex items-start justify-between">
                   <span
@@ -126,7 +126,7 @@ export default function BlogPage() {
                   >
                     {post.category}
                   </span>
-                  <span className="text-[#E8E8E5] text-3xl font-light font-mono select-none tabular-nums">
+                  <span className="select-none font-mono text-2xl font-light tabular-nums text-[#E8E8E5] sm:text-3xl">
                     0{i + 2}
                   </span>
                 </div>
@@ -141,8 +141,8 @@ export default function BlogPage() {
                   <p className="text-[#78716C] text-sm leading-relaxed line-clamp-2">{post.description}</p>
                 </div>
 
-                <div className="flex items-center justify-between mt-auto pt-4 border-t border-[#E8E8E5]">
-                  <div className="flex items-center gap-2">
+                <div className="mt-auto flex flex-col gap-3 border-t border-[#E8E8E5] pt-4 sm:flex-row sm:items-center sm:justify-between">
+                  <div className="flex flex-wrap items-center gap-2">
                     <span className="text-[#A8A29E] text-xs">{formatDate(post.date)}</span>
                     <span className="text-[#E8E8E5]">·</span>
                     <span className="text-[#A8A29E] text-xs">{post.readTime}</span>

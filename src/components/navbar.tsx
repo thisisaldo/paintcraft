@@ -38,11 +38,17 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? 'hidden' : ''
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [mobileOpen])
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 px-4 pt-5">
+    <header className="fixed top-0 left-0 right-0 z-50 px-3 pt-3 sm:px-4 sm:pt-5">
       <nav
-        style={{ height: '52px' }}
-        className={`max-w-5xl mx-auto flex items-center justify-between px-6 rounded-full transition-all duration-500 overflow-visible ${
+        className={`h-14 md:h-[52px] max-w-5xl mx-auto flex items-center justify-between px-4 sm:px-5 md:px-6 rounded-full transition-all duration-500 overflow-visible ${
           scrolled
             ? 'bg-white/95 backdrop-blur-sm border border-[#E8E8E5] shadow-[0_2px_20px_rgba(0,0,0,0.06)]'
             : 'bg-transparent'
@@ -54,12 +60,12 @@ export default function Navbar() {
           <img
             src="/logo.svg"
             alt="Orbit Painting Melbourne"
-            style={{ height: '90px', width: 'auto', display: 'block' }}
+            className="block h-[72px] w-auto md:h-[90px]"
           />
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-7">
+        <div className="hidden md:flex items-center gap-6 lg:gap-7">
 
           {/* Services — hover dropdown */}
           <div
@@ -125,9 +131,10 @@ export default function Navbar() {
             <ArrowRight className="w-3 h-3" />
           </button>
           <button
-            className="md:hidden p-2 text-[#111110]"
+            className="md:hidden -mr-1 p-2 text-[#111110]"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle navigation"
+            aria-expanded={mobileOpen}
           >
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -136,7 +143,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="md:hidden mt-2 mx-4 bg-white border border-[#E8E8E5] rounded-2xl p-5 shadow-[0_8px_30px_rgba(0,0,0,0.08)]">
+        <div className="md:hidden mt-2 max-h-[calc(100dvh-5.5rem)] overflow-y-auto rounded-2xl border border-[#E8E8E5] bg-white p-5 shadow-[0_8px_30px_rgba(0,0,0,0.08)]">
           <div className="flex flex-col gap-1">
 
             {/* Services — expandable */}

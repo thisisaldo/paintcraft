@@ -56,7 +56,7 @@ export default function WhyUs() {
             Why choose us
           </p>
           <h2
-            className="text-4xl md:text-5xl text-[#111110] leading-tight tracking-tight max-w-[18ch]"
+            className="max-w-[18ch] text-[2.4rem] leading-tight tracking-tight text-[#111110] sm:text-4xl md:text-5xl"
             style={{ fontFamily: 'var(--font-instrument-serif)' }}
           >
             Built on <em>reputation</em>,
@@ -87,7 +87,7 @@ export default function WhyUs() {
             return (
               <div
                 key={item.title}
-                className="flex gap-4 p-6 rounded-2xl border border-[#E8E8E5] bg-[#FAFAF8] hover:bg-white hover:shadow-[0_2px_20px_rgba(0,0,0,0.04)] transition-all duration-300"
+                className="flex gap-4 rounded-2xl border border-[#E8E8E5] bg-[#FAFAF8] p-5 transition-all duration-300 hover:bg-white hover:shadow-[0_2px_20px_rgba(0,0,0,0.04)] sm:p-6"
               >
                 <div className="w-9 h-9 rounded-xl bg-white border border-[#E8E8E5] flex items-center justify-center flex-shrink-0">
                   <Icon className="w-4 h-4 text-[#111110]" strokeWidth={1.5} />

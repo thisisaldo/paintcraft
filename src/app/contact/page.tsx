@@ -71,7 +71,7 @@ export default function ContactPage() {
           {/* Breadcrumb */}
           <nav
             aria-label="Breadcrumb"
-            className="flex items-center gap-2 text-[11px] text-[#A8A29E] uppercase tracking-[0.12em] font-medium mb-10"
+            className="mb-10 flex flex-wrap items-center gap-2 text-[11px] font-medium uppercase tracking-[0.12em] text-[#A8A29E]"
           >
             <Link href="/" className="hover:text-[#78716C] transition-colors">Home</Link>
             <span>/</span>
@@ -84,7 +84,7 @@ export default function ContactPage() {
                 Get in touch
               </p>
               <h1
-                className="text-5xl md:text-6xl text-[#111110] leading-tight tracking-tight"
+                className="text-[2.8rem] leading-tight tracking-tight text-[#111110] sm:text-5xl md:text-6xl"
                 style={{ fontFamily: 'var(--font-instrument-serif)' }}
               >
                 Let&apos;s talk about
@@ -96,13 +96,13 @@ export default function ContactPage() {
               <p className="text-[#78716C] text-base leading-relaxed mb-8">
                 Chat with Mick for an instant answer on pricing, timelines, or to kick off your free quote — no forms, no waiting.
               </p>
-              <div className="flex flex-wrap items-center gap-3">
-                <OpenChatButton className="inline-flex items-center gap-2 bg-[#111110] text-white text-sm px-5 py-2.5 rounded-full hover:bg-[#2A2A29] active:scale-[0.98] transition-all duration-200">
+              <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+                <OpenChatButton className="inline-flex items-center justify-center gap-2 rounded-full bg-[#111110] px-5 py-2.5 text-sm text-white transition-all duration-200 hover:bg-[#2A2A29] active:scale-[0.98]">
                   Start free quote chat
                 </OpenChatButton>
                 <a
                   href="tel:+61344279403"
-                  className="inline-flex items-center gap-2 border border-[#E8E8E5] text-[#111110] text-sm px-5 py-2.5 rounded-full hover:border-[#D6D3CF] hover:bg-white transition-all duration-200"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-[#E8E8E5] px-5 py-2.5 text-sm text-[#111110] transition-all duration-200 hover:border-[#D6D3CF] hover:bg-white"
                 >
                   <Phone className="w-3.5 h-3.5" />
                   +61 3 4427 9403
@@ -117,7 +117,7 @@ export default function ContactPage() {
       <section className="relative px-4 pt-20 pb-16 bg-[#111110]">
         <div className="absolute top-0 inset-x-0 h-16 bg-gradient-to-b from-[#FAFAF8] to-transparent pointer-events-none" />
         <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-2 lg:gap-16">
 
             {/* Left — contact info */}
             <div className="flex flex-col gap-6">
@@ -125,13 +125,13 @@ export default function ContactPage() {
               {contactDetails.map((detail) => {
                 const Icon = detail.icon
                 return (
-                  <a key={detail.label} href={detail.href} className="flex items-center gap-3 group">
+                  <a key={detail.label} href={detail.href} className="group flex items-start gap-3 sm:items-center">
                     <div className="w-9 h-9 rounded-xl bg-white/8 flex items-center justify-center flex-shrink-0">
                       <Icon className="w-4 h-4 text-white/70" strokeWidth={1.5} />
                     </div>
-                    <div>
+                    <div className="min-w-0">
                       <p className="text-white/40 text-xs">{detail.label}</p>
-                      <p className="text-white text-sm font-medium group-hover:text-white/75 transition-colors">
+                      <p className={`text-sm font-medium text-white transition-colors group-hover:text-white/75 ${detail.label === 'Email us' ? 'break-all' : ''}`}>
                         {detail.value}
                       </p>
                     </div>
@@ -190,7 +190,7 @@ export default function ContactPage() {
             </div>
 
             {/* Right — chat CTA card */}
-            <div className="rounded-2xl border border-white/10 bg-white/4 p-8 flex flex-col gap-8">
+            <div className="flex flex-col gap-8 rounded-2xl border border-white/10 bg-white/4 p-6 sm:p-8">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
                   <MessageCircle className="w-5 h-5 text-white" strokeWidth={1.5} />
@@ -220,14 +220,14 @@ export default function ContactPage() {
               <div className="flex flex-col gap-3">
                 <OpenChatButton
                   showArrow={false}
-                  className="flex items-center justify-center gap-2 bg-white text-[#111110] text-sm font-medium px-6 py-3.5 rounded-full hover:bg-[#FAFAF8] active:scale-[0.98] transition-all duration-200"
+                  className="flex w-full items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-medium text-[#111110] transition-all duration-200 hover:bg-[#FAFAF8] active:scale-[0.98]"
                 >
                   <MessageCircle className="w-4 h-4" />
                   Start free quote chat
                 </OpenChatButton>
                 <a
                   href="tel:+61344279403"
-                  className="flex items-center justify-center gap-1.5 text-[#78716C] text-sm hover:text-white transition-colors py-1"
+                  className="flex items-center justify-center gap-1.5 py-1 text-center text-sm text-[#78716C] transition-colors hover:text-white"
                 >
                   Prefer to call? +61 3 4427 9403
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -237,7 +237,7 @@ export default function ContactPage() {
           </div>
 
           {/* Google Maps */}
-          <div className="mt-12 rounded-2xl overflow-hidden border border-white/10" style={{ height: '360px' }}>
+          <div className="mt-12 h-[300px] overflow-hidden rounded-2xl border border-white/10 sm:h-[360px]">
             <iframe
               src="https://maps.google.com/maps?q=South+East+Melbourne,+VIC,+Australia&t=m&z=10&output=embed&iwloc=near"
               width="100%"

@@ -60,21 +60,41 @@ export default function Hero() {
 
   useEffect(() => {
     const video = videoRef.current
-    if (!video) return
+    if (!video) {
+      setTextVisible(true)
+      return
+    }
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
+    if (reduceMotion.matches) {
+      setTextVisible(true)
+      return
+    }
+
+    const revealText = () => setTextVisible(true)
+    const fallbackTimer = window.setTimeout(revealText, 1800)
     video.playbackRate = 0.6
 
     const handleEnded = () => {
-      setTextVisible(true)
-      // video stops here — no loop
+      window.clearTimeout(fallbackTimer)
+      revealText()
+    }
+
+    const attemptPlay = () => {
+      if (video.ended) return
+      video.play().catch(() => {
+        window.clearTimeout(fallbackTimer)
+        revealText()
+      })
     }
 
     video.addEventListener('ended', handleEnded)
+    video.addEventListener('error', revealText)
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          // only resume if it hasn't finished yet
-          if (!video.ended) video.play()
+          attemptPlay()
         } else {
           if (!video.ended) video.pause()
         }
@@ -85,13 +105,15 @@ export default function Hero() {
     if (sectionRef.current) observer.observe(sectionRef.current)
 
     return () => {
+      window.clearTimeout(fallbackTimer)
       video.removeEventListener('ended', handleEnded)
+      video.removeEventListener('error', revealText)
       observer.disconnect()
     }
   }, [])
 
   return (
-    <section ref={sectionRef} className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden bg-[#FAFAF8]">
+    <section ref={sectionRef} className="relative flex min-h-[100svh] items-center justify-center overflow-hidden bg-[#FAFAF8] md:min-h-[100dvh]">
       {/* Video background */}
       <div
         className="absolute inset-0"
@@ -121,7 +143,7 @@ export default function Hero() {
       <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-[#FAFAF8]/22 via-transparent to-[#FAFAF8]/22" />
 
       {/* Content */}
-      <div className="relative z-10 flex items-center justify-center w-full px-4 pt-28">
+      <div className="relative z-10 flex w-full items-center justify-center px-3 pt-24 sm:px-4 sm:pt-28">
         <AnimatePresence>
           {textVisible && (
             <motion.div
@@ -130,7 +152,7 @@ export default function Hero() {
               initial="hidden"
               animate="show"
               exit="exit"
-              className="w-full max-w-2xl text-center rounded-3xl px-8 py-10 md:px-12 md:py-14"
+              className="w-full max-w-2xl rounded-[2rem] px-5 py-8 text-center sm:px-8 sm:py-10 md:px-12 md:py-14"
               style={{
                 background: 'rgba(250, 250, 248, 0.32)',
                 backdropFilter: 'blur(14px)',
@@ -140,9 +162,9 @@ export default function Hero() {
               }}
             >
               {/* Badge */}
-              <motion.div variants={item} className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-[#E0DDD9] bg-white/60 mb-8">
+              <motion.div variants={item} className="mb-6 inline-flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 rounded-full border border-[#E0DDD9] bg-white/60 px-3 py-1.5 sm:mb-8 sm:px-4">
                 <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                <span className="text-[11px] font-medium tracking-[0.12em] text-[#78716C] uppercase">
+                <span className="text-center text-[10px] font-medium uppercase leading-relaxed tracking-[0.12em] text-[#78716C] sm:text-[11px]">
                   Booking now · SE Melbourne · Free quotes in 24 hrs
                 </span>
               </motion.div>
@@ -150,7 +172,7 @@ export default function Hero() {
               {/* Headline */}
               <motion.h2
                 variants={item}
-                className="text-4xl md:text-[3.5rem] lg:text-[4.25rem] text-[#111110] leading-[0.95] tracking-[-0.025em] mb-6"
+                className="mb-5 text-[2.85rem] leading-[0.92] tracking-[-0.025em] text-[#111110] sm:mb-6 sm:text-4xl md:text-[3.5rem] lg:text-[4.25rem]"
                 style={{ fontFamily: 'var(--font-instrument-serif)' }}
               >
                 Your home, painted
@@ -161,23 +183,23 @@ export default function Hero() {
               </motion.h2>
 
               {/* Subtext */}
-              <motion.p variants={item} className="text-[#78716C] text-base md:text-lg max-w-[44ch] mx-auto leading-relaxed mb-8">
+              <motion.p variants={item} className="mx-auto mb-7 max-w-[44ch] text-sm leading-relaxed text-[#78716C] sm:mb-8 sm:text-base md:text-lg">
                 SE Melbourne&apos;s local painting specialists — serving homes and businesses
                 from St Kilda to Frankston. VBA licensed, fully insured, free quotes within 24 hours.
               </motion.p>
 
               {/* CTAs */}
-              <motion.div variants={item} className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-8">
+              <motion.div variants={item} className="mb-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
                 <button
                   onClick={() => window.dispatchEvent(new Event('orbit:open-chat'))}
-                  className="flex items-center gap-2 bg-[#111110] text-white text-sm px-6 py-3.5 rounded-full hover:bg-[#2A2A29] active:scale-[0.98] transition-all duration-200 shadow-[0_2px_16px_rgba(17,17,16,0.22)]"
+                  className="flex w-full items-center justify-center gap-2 rounded-full bg-[#111110] px-6 py-3.5 text-sm text-white shadow-[0_2px_16px_rgba(17,17,16,0.22)] transition-all duration-200 hover:bg-[#2A2A29] active:scale-[0.98] sm:w-auto"
                 >
                   Get My Free Quote
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
                 <Link
                   href="/#portfolio"
-                  className="flex items-center gap-1.5 text-[#78716C] text-sm hover:text-[#111110] transition-colors duration-200"
+                  className="flex w-full items-center justify-center gap-1.5 text-sm text-[#78716C] transition-colors duration-200 hover:text-[#111110] sm:w-auto"
                 >
                   See recent work
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -185,7 +207,7 @@ export default function Hero() {
               </motion.div>
 
               {/* Trust line */}
-              <motion.div variants={item} className="flex items-center justify-center gap-5 flex-wrap pt-6 border-t border-[#E0DDD9]/60">
+              <motion.div variants={item} className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 border-t border-[#E0DDD9]/60 pt-6 sm:gap-x-5">
                 {['VBA Licensed & Insured', 'Local SE Melbourne Team', 'No Mess · No Surprises', 'Free Detailed Quotes'].map((trust) => (
                   <span key={trust} className="text-[11px] text-[#A8A29E] tracking-wide">
                     {trust}
@@ -198,10 +220,10 @@ export default function Hero() {
       </div>
 
       {/* Bottom fade to next section */}
-      <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-[#FAFAF8] to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[#FAFAF8] to-transparent pointer-events-none sm:h-28" />
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-35">
+      <div className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 opacity-35 sm:flex">
         <div
           className="w-px h-8 bg-[#78716C]"
           style={{ animation: 'pulse 2s ease-in-out infinite' }}

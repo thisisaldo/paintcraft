@@ -174,7 +174,7 @@ export default function ResidentialPaintingPage() {
           {/* Breadcrumb */}
           <nav
             aria-label="Breadcrumb"
-            className="flex items-center gap-2 text-[11px] text-[#A8A29E] uppercase tracking-[0.12em] font-medium mb-10"
+            className="mb-10 flex flex-wrap items-center gap-2 text-[11px] font-medium uppercase tracking-[0.12em] text-[#A8A29E]"
           >
             <Link href="/" className="hover:text-[#78716C] transition-colors">Home</Link>
             <span>/</span>
@@ -189,7 +189,7 @@ export default function ResidentialPaintingPage() {
                 Residential service
               </p>
               <h1
-                className="text-5xl md:text-6xl text-[#111110] leading-tight tracking-tight"
+                className="text-[2.8rem] leading-tight tracking-tight text-[#111110] sm:text-5xl md:text-6xl"
                 style={{ fontFamily: 'var(--font-instrument-serif)' }}
               >
                 Residential Painters
@@ -202,13 +202,13 @@ export default function ResidentialPaintingPage() {
                 From period homes in Caulfield to new builds in Berwick — we arrive on time, carry out thorough
                 preparation, and deliver a finish that looks great and lasts.
               </p>
-              <div className="flex flex-wrap items-center gap-3">
-                <OpenChatButton className="inline-flex items-center gap-2 bg-[#111110] text-white text-sm px-5 py-2.5 rounded-full hover:bg-[#2A2A29] active:scale-[0.98] transition-all duration-200">
+              <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+                <OpenChatButton className="inline-flex items-center justify-center gap-2 rounded-full bg-[#111110] px-5 py-2.5 text-sm text-white transition-all duration-200 hover:bg-[#2A2A29] active:scale-[0.98]">
                   Get Free Quote
                 </OpenChatButton>
                 <a
                   href="tel:+61344279403"
-                  className="inline-flex items-center gap-2 border border-[#E8E8E5] text-[#111110] text-sm px-5 py-2.5 rounded-full hover:border-[#D6D3CF] hover:bg-white transition-all duration-200"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-[#E8E8E5] px-5 py-2.5 text-sm text-[#111110] transition-all duration-200 hover:border-[#D6D3CF] hover:bg-white"
                 >
                   <Phone className="w-3.5 h-3.5" />
                   (03) 9547 2863
@@ -263,7 +263,7 @@ export default function ResidentialPaintingPage() {
               What&apos;s included
             </p>
             <h2
-              className="text-4xl md:text-5xl text-[#111110] leading-tight tracking-tight"
+              className="text-[2.4rem] leading-tight tracking-tight text-[#111110] sm:text-4xl md:text-5xl"
               style={{ fontFamily: 'var(--font-instrument-serif)' }}
             >
               Everything your home
@@ -296,7 +296,7 @@ export default function ResidentialPaintingPage() {
               How it works
             </p>
             <h2
-              className="text-4xl md:text-5xl text-[#111110] leading-tight tracking-tight"
+              className="text-[2.4rem] leading-tight tracking-tight text-[#111110] sm:text-4xl md:text-5xl"
               style={{ fontFamily: 'var(--font-instrument-serif)' }}
             >
               Simple process,
@@ -348,7 +348,7 @@ export default function ResidentialPaintingPage() {
               Questions
             </p>
             <h2
-              className="text-4xl md:text-5xl text-[#111110] leading-tight tracking-tight"
+              className="text-[2.4rem] leading-tight tracking-tight text-[#111110] sm:text-4xl md:text-5xl"
               style={{ fontFamily: 'var(--font-instrument-serif)' }}
             >
               Residential painting
@@ -368,7 +368,7 @@ export default function ResidentialPaintingPage() {
             Get started
           </p>
           <h2
-            className="text-4xl md:text-5xl text-white leading-tight tracking-tight mb-4"
+            className="mb-4 text-[2.4rem] leading-tight tracking-tight text-white sm:text-4xl md:text-5xl"
             style={{ fontFamily: 'var(--font-instrument-serif)' }}
           >
             Ready for a fresh coat?
@@ -376,13 +376,13 @@ export default function ResidentialPaintingPage() {
           <p className="text-[#5A5A58] text-sm mb-8 max-w-[40ch] mx-auto leading-relaxed">
             Free written quote returned within 24 hours. No obligation — just honest advice from a local SE Melbourne painting team.
           </p>
-          <div className="flex flex-wrap justify-center gap-3">
-            <OpenChatButton className="inline-flex items-center gap-2 bg-white text-[#111110] text-sm px-6 py-3 rounded-full hover:bg-[#FAFAF8] active:scale-[0.98] transition-all duration-200 font-medium">
+          <div className="flex flex-col justify-center gap-3 sm:flex-row">
+            <OpenChatButton className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-medium text-[#111110] transition-all duration-200 hover:bg-[#FAFAF8] active:scale-[0.98]">
               Get Free Quote
             </OpenChatButton>
             <a
               href="tel:+61344279403"
-              className="inline-flex items-center gap-2 border border-white/10 text-white text-sm px-6 py-3 rounded-full hover:border-white/20 transition-all duration-200"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 px-6 py-3 text-sm text-white transition-all duration-200 hover:border-white/20"
             >
               <Phone className="w-3.5 h-3.5" />
               (03) 9547 2863

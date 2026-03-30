@@ -40,13 +40,13 @@ export default function Services() {
     <section id="services" className="relative py-24 px-4 bg-[#FAFAF8] overflow-hidden">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+        <div className="mb-12 flex flex-col justify-between gap-6 md:mb-14 md:flex-row md:items-end">
           <div>
             <p className="text-[11px] font-medium tracking-[0.12em] text-[#A8A29E] uppercase mb-3">
               What we do
             </p>
             <h2
-              className="text-4xl md:text-5xl text-[#111110] leading-tight tracking-tight"
+              className="text-[2.4rem] leading-tight tracking-tight text-[#111110] sm:text-4xl md:text-5xl"
               style={{ fontFamily: 'var(--font-instrument-serif)' }}
             >
               Complete painting
@@ -66,7 +66,7 @@ export default function Services() {
             return (
               <div
                 key={service.title}
-                className="bg-[#FAFAF8] p-8 md:p-10 flex flex-col gap-5 group hover:bg-white transition-colors duration-300"
+                className="group flex flex-col gap-5 bg-[#FAFAF8] p-6 transition-colors duration-300 hover:bg-white md:p-10"
               >
                 <div className="flex items-start justify-between">
                   <div className="flex items-center gap-3">
@@ -80,14 +80,14 @@ export default function Services() {
                       <p className="text-[#A8A29E] text-xs mt-0.5">{service.subtitle}</p>
                     </div>
                   </div>
-                  <span className="text-[#E8E8E5] text-3xl font-light font-mono select-none tabular-nums">
+                  <span className="select-none font-mono text-2xl font-light tabular-nums text-[#E8E8E5] sm:text-3xl">
                     0{index + 1}
                   </span>
                 </div>
 
                 <p className="text-[#78716C] text-sm leading-relaxed">{service.description}</p>
 
-                <ul className="grid grid-cols-2 gap-y-2 gap-x-4 mt-auto">
+                <ul className="mt-auto grid grid-cols-1 gap-x-4 gap-y-2 sm:grid-cols-2">
                   {service.features.map((f) => (
                     <li key={f} className="flex items-center gap-2 text-xs text-[#78716C]">
                       <div className="w-1 h-1 rounded-full bg-[#C4C1BC] flex-shrink-0" />

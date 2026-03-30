@@ -38,9 +38,9 @@ export default function Footer() {
       <div className="max-w-5xl mx-auto">
 
         {/* Trust strip */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/5 rounded-2xl overflow-hidden mb-12">
+        <div className="mb-12 grid grid-cols-1 gap-px overflow-hidden rounded-2xl bg-white/5 sm:grid-cols-2 md:grid-cols-4">
           {trustBadges.map((badge) => (
-            <div key={badge.label} className="bg-[#111110] px-5 py-4">
+            <div key={badge.label} className="bg-[#111110] px-5 py-4 sm:px-6">
               <p className="text-white text-sm font-medium">{badge.label}</p>
               <p className="text-[#4A4A48] text-xs mt-0.5">{badge.sub}</p>
             </div>
@@ -51,7 +51,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 pb-12 border-b border-white/5">
           {/* Brand + NAP */}
           <div>
-            <p className="text-[#4A4A48] text-xs leading-relaxed mb-5">
+            <p className="mb-5 max-w-sm text-xs leading-relaxed text-[#4A4A48]">
               South East Melbourne&apos;s trusted residential and commercial painting specialists.
               Licensed, insured, and delivering flawless results since 2009.
             </p>
@@ -60,14 +60,14 @@ export default function Footer() {
             <address className="not-italic flex flex-col gap-2.5 mb-5">
               <a
                 href="tel:+61344279403"
-                className="inline-flex items-center gap-2 text-[#4A4A48] text-xs hover:text-[#78716C] transition-colors"
+                className="inline-flex items-start gap-2 text-xs text-[#4A4A48] transition-colors hover:text-[#78716C] sm:items-center"
               >
                 <Phone className="w-3 h-3 flex-shrink-0" />
                 +61 3 4427 9403
               </a>
               <a
                 href="mailto:hello@orbitpaintingmelbourne.com.au"
-                className="inline-flex items-center gap-2 text-[#4A4A48] text-xs hover:text-[#78716C] transition-colors"
+                className="inline-flex items-start gap-2 break-all text-xs text-[#4A4A48] transition-colors hover:text-[#78716C] sm:items-center"
               >
                 <Mail className="w-3 h-3 flex-shrink-0" />
                 hello@orbitpaintingmelbourne.com.au
@@ -111,7 +111,7 @@ export default function Footer() {
             <h4 className="text-[#5A5A58] text-[10px] font-medium tracking-[0.12em] uppercase mb-4">
               Painters in Melbourne
             </h4>
-            <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5">
+            <ul className="grid grid-cols-1 gap-x-4 gap-y-2.5 sm:grid-cols-2">
               {areaLinks.map((area) => (
                 <li key={area}>
                   <span className="text-[#4A4A48] text-xs">Painters {area}</span>
@@ -122,11 +122,11 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pt-8">
+        <div className="flex flex-col items-start justify-between gap-4 pt-8 md:flex-row md:items-center">
           <p className="text-[#3A3A38] text-xs">
             © {new Date().getFullYear()} Orbit Painting Melbourne. All rights reserved.
           </p>
-          <div className="flex gap-5">
+          <div className="flex flex-wrap gap-5">
             <Link href="#" className="text-[#3A3A38] text-xs hover:text-[#4A4A48] transition-colors">
               Privacy Policy
             </Link>

@@ -168,9 +168,9 @@ export default function ScrollStory() {
   }, [])
 
   return (
-    <div ref={sectionRef} className="relative bg-[#FAFAF8]" style={{ height: '320vh' }}>
+    <div ref={sectionRef} className="relative h-[280vh] bg-[#FAFAF8] sm:h-[300vh] md:h-[320vh]">
 
-      <div className="sticky top-0 h-screen w-full overflow-hidden bg-[#FAFAF8]">
+      <div className="sticky top-0 h-[100svh] w-full overflow-hidden bg-[#FAFAF8] md:h-screen">
 
         {/* Hidden video — only used for decoding, never painted directly */}
         <video
@@ -216,14 +216,14 @@ export default function ScrollStory() {
         />
 
         {/* Card */}
-        <div className="absolute inset-0 flex items-center justify-center px-4">
+        <div className="absolute inset-0 flex items-center justify-center px-3 sm:px-4">
           <div
             ref={cardRef}
             className="max-w-md w-full"
             style={{ opacity: 0, transform: 'translateY(18px)', pointerEvents: 'none' }}
           >
             <div
-              className="rounded-2xl border border-black/8 px-5 py-6 md:px-8 md:py-8"
+              className="rounded-[1.75rem] border border-black/8 px-4 py-5 sm:px-5 sm:py-6 md:px-8 md:py-8"
               style={{
                 background: 'rgba(250,250,248,0.55)',
                 backdropFilter: 'blur(20px)',
@@ -231,18 +231,18 @@ export default function ScrollStory() {
                 boxShadow: '0 8px 40px rgba(0,0,0,0.10), inset 0 1px 0 rgba(255,255,255,0.8)',
               }}
             >
-              <p className="text-[10px] font-medium tracking-[0.18em] text-[#A8A29E] uppercase mb-4">
+              <p className="mb-4 text-[9px] font-medium uppercase tracking-[0.18em] text-[#A8A29E] sm:text-[10px]">
                 {CARD.eyebrow}
               </p>
               <h2
-                className="text-2xl md:text-4xl text-[#111110] leading-tight tracking-tight mb-4 md:mb-5 whitespace-pre-line"
+                className="mb-4 whitespace-pre-line text-[1.85rem] leading-[1.05] tracking-tight text-[#111110] sm:text-2xl md:mb-5 md:text-4xl"
                 style={{ fontFamily: 'var(--font-instrument-serif)' }}
               >
                 {CARD.heading}
               </h2>
-              <p className="text-[#78716C] text-sm leading-relaxed mb-5 md:mb-7">{CARD.body}</p>
+              <p className="mb-5 text-xs leading-relaxed text-[#78716C] sm:text-sm md:mb-7">{CARD.body}</p>
               <div
-                className="inline-flex items-baseline gap-2 px-4 py-2 rounded-full border border-black/8"
+                className="inline-flex flex-wrap items-baseline gap-2 rounded-full border border-black/8 px-4 py-2"
                 style={{ background: 'rgba(17,17,16,0.05)' }}
               >
                 <span className="text-[#111110] text-sm font-semibold tracking-tight">{CARD.stat}</span>
@@ -255,7 +255,7 @@ export default function ScrollStory() {
         {/* Scroll hint */}
         <div
           ref={hintRef}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none"
+          className="pointer-events-none absolute bottom-7 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 sm:flex"
         >
           <div className="w-px h-8 bg-[#78716C]/40" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
           <span className="text-[9px] tracking-[0.15em] text-[#A8A29E] uppercase">Scroll</span>

@@ -51,7 +51,7 @@ export default function Testimonials() {
             Client reviews
           </p>
           <h2
-            className="text-4xl md:text-5xl text-[#111110] leading-tight tracking-tight"
+            className="text-[2.4rem] leading-tight tracking-tight text-[#111110] sm:text-4xl md:text-5xl"
             style={{ fontFamily: 'var(--font-instrument-serif)' }}
           >
             What Melbourne
@@ -65,13 +65,13 @@ export default function Testimonials() {
           {testimonials.map((t, i) => (
             <div
               key={i}
-              className="bg-white rounded-2xl border border-[#E8E8E5] p-8 flex flex-col gap-5"
+              className="flex flex-col gap-5 rounded-2xl border border-[#E8E8E5] bg-white p-6 sm:p-8"
             >
               <StarRow />
               <p className="text-[#111110] text-sm leading-relaxed flex-1">
                 &ldquo;{t.quote}&rdquo;
               </p>
-              <div className="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-[#F0EEEb]">
+              <div className="flex flex-col gap-3 border-t border-[#F0EEEb] pt-4 sm:flex-row sm:items-center sm:justify-between">
                 <div>
                   <p className="text-[#111110] font-medium text-sm">{t.author}</p>
                   <p className="text-[#A8A29E] text-xs">{t.location}</p>

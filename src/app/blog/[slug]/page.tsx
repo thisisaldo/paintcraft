@@ -147,7 +147,7 @@ export default async function BlogPostPage({
           {/* Breadcrumb */}
           <nav
             aria-label="Breadcrumb"
-            className="flex items-center gap-2 text-[11px] text-[#A8A29E] uppercase tracking-[0.12em] font-medium mb-10"
+            className="mb-10 flex flex-wrap items-center gap-2 text-[11px] font-medium uppercase tracking-[0.12em] text-[#A8A29E]"
           >
             <Link href="/" className="hover:text-[#78716C] transition-colors">Home</Link>
             <span>/</span>
@@ -170,14 +170,14 @@ export default async function BlogPostPage({
 
           {/* Title */}
           <h1
-            className="text-4xl md:text-5xl text-[#111110] leading-tight tracking-tight mb-6"
+            className="mb-6 text-[2.4rem] leading-tight tracking-tight text-[#111110] sm:text-4xl md:text-5xl"
             style={{ fontFamily: 'var(--font-instrument-serif)' }}
           >
             {post.title}
           </h1>
 
           {/* Description */}
-          <p className="text-[#78716C] text-lg leading-relaxed border-b border-[#E8E8E5] pb-10">
+          <p className="border-b border-[#E8E8E5] pb-10 text-base leading-relaxed text-[#78716C] sm:text-lg">
             {post.description}
           </p>
         </div>
@@ -191,7 +191,7 @@ export default async function BlogPostPage({
           </article>
 
           {/* Author byline */}
-          <div className="mt-12 pt-8 border-t border-[#E8E8E5] flex items-center gap-4">
+          <div className="mt-12 flex items-start gap-4 border-t border-[#E8E8E5] pt-8 sm:items-center">
             <div className="w-10 h-10 rounded-full bg-[#111110] flex items-center justify-center flex-shrink-0">
               <span className="text-white text-sm font-medium" style={{ fontFamily: 'var(--font-instrument-serif)' }}>O</span>
             </div>
@@ -210,7 +210,7 @@ export default async function BlogPostPage({
             Get started
           </p>
           <h2
-            className="text-3xl md:text-4xl text-white leading-tight tracking-tight mb-4"
+            className="mb-4 text-[2.15rem] leading-tight tracking-tight text-white sm:text-3xl md:text-4xl"
             style={{ fontFamily: 'var(--font-instrument-serif)' }}
           >
             Ready for a free quote?
@@ -228,7 +228,7 @@ export default async function BlogPostPage({
       {related.length > 0 && (
         <section className="py-20 px-4 bg-[#FAFAF8]">
           <div className="max-w-5xl mx-auto">
-            <div className="flex items-center justify-between mb-10">
+            <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <h2
                 className="text-2xl text-[#111110] tracking-tight"
                 style={{ fontFamily: 'var(--font-instrument-serif)' }}

@@ -21,7 +21,6 @@ export default function ChatWidget() {
   const [messages, setMessages] = useState<Message[]>([GREETING])
   const [input, setInput] = useState('')
   const [loading, setLoading] = useState(false)
-  const [sessionId] = useState(() => crypto.randomUUID())
   const bottomRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
 
@@ -38,6 +37,7 @@ export default function ChatWidget() {
   // Auto-open once per browser session after a short delay, with a pop sound
   useEffect(() => {
     if (sessionStorage.getItem('chat_greeted')) return
+    if (window.matchMedia('(max-width: 639px)').matches) return
     const timer = setTimeout(() => {
       setOpen(true)
       sessionStorage.setItem('chat_greeted', '1')
@@ -105,9 +105,9 @@ export default function ChatWidget() {
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3">
+    <div className="fixed bottom-3 left-3 right-3 z-40 flex flex-col items-stretch gap-3 sm:bottom-6 sm:left-auto sm:right-6 sm:items-end">
       {open && (
-        <div className="w-80 sm:w-96 rounded-2xl shadow-xl border border-[#E8E8E5] overflow-hidden flex flex-col bg-white">
+        <div className="flex w-full max-w-sm self-end flex-col overflow-hidden rounded-2xl border border-[#E8E8E5] bg-white shadow-xl sm:w-96 sm:max-w-none">
           {/* Header */}
           <div className="flex items-center justify-between px-4 py-3 bg-[#111110]">
             <div className="flex items-center gap-2">
@@ -124,7 +124,7 @@ export default function ChatWidget() {
           </div>
 
           {/* Messages */}
-          <div className="flex flex-col gap-3 p-4 overflow-y-auto max-h-96 bg-[#FAFAF9]">
+          <div className="flex max-h-[calc(100dvh-12rem)] flex-col gap-3 overflow-y-auto bg-[#FAFAF9] p-4 sm:max-h-96">
             {messages.map((msg, i) => (
               <div
                 key={i}
@@ -156,7 +156,7 @@ export default function ChatWidget() {
           </div>
 
           {/* Input */}
-          <div className="flex items-center gap-2 px-3 py-3 border-t border-[#E8E8E5] bg-white">
+          <div className="flex items-end gap-2 border-t border-[#E8E8E5] bg-white px-3 py-3 sm:items-center">
             <input
               ref={inputRef}
               type="text"
@@ -182,7 +182,7 @@ export default function ChatWidget() {
       {/* Toggle button */}
       <button
         onClick={() => setOpen((prev) => !prev)}
-        className="w-13 h-13 rounded-full bg-[#111110] text-white shadow-lg flex items-center justify-center hover:bg-[#333330] transition-colors"
+        className="flex h-13 w-13 self-end items-center justify-center rounded-full bg-[#111110] text-white shadow-lg transition-colors hover:bg-[#333330]"
         aria-label={open ? 'Close chat' : 'Open chat'}
         style={{ width: 52, height: 52 }}
       >

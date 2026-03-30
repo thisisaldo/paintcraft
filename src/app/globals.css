@@ -12,6 +12,10 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  overflow-x: clip;
+}
+
 /* Scroll reveal */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(20px); }

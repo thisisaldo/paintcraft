@@ -114,13 +114,13 @@ export default function ServiceAreas() {
 
       <div className="relative z-10 max-w-5xl mx-auto">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+        <div className="mb-12 flex flex-col justify-between gap-6 md:mb-14 md:flex-row md:items-end">
           <div>
             <p className="text-[11px] font-medium tracking-[0.12em] text-[#A8A29E] uppercase mb-3">
               Service areas
             </p>
             <h2
-              className="text-4xl md:text-5xl text-[#111110] leading-tight tracking-tight"
+              className="text-[2.4rem] leading-tight tracking-tight text-[#111110] sm:text-4xl md:text-5xl"
               style={{ fontFamily: 'var(--font-instrument-serif)' }}
             >
               We paint across
@@ -134,7 +134,7 @@ export default function ServiceAreas() {
         </div>
 
         {/* Area columns */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 md:grid-cols-3 lg:grid-cols-5">
           {areaGroups.map((group) => (
             <div key={group.region}>
               <h3 className="text-[#111110] font-medium text-[11px] tracking-[0.1em] uppercase mb-4 pb-3 border-b border-[#E8E8E5]">
@@ -154,7 +154,7 @@ export default function ServiceAreas() {
         </div>
 
         {/* Callout */}
-        <div className="mt-14 p-8 md:p-10 rounded-2xl bg-white/60 backdrop-blur-sm border border-[#E8E8E5] flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div className="mt-14 flex flex-col items-stretch justify-between gap-6 rounded-2xl border border-[#E8E8E5] bg-white/60 p-6 backdrop-blur-sm sm:p-8 md:flex-row md:items-center md:p-10">
           <div>
             <h3 className="text-[#111110] font-medium text-sm mb-1">
               Don&apos;t see your suburb listed?
@@ -165,7 +165,7 @@ export default function ServiceAreas() {
           </div>
           <a
             href="tel:+61344279403"
-            className="flex-shrink-0 w-full md:w-auto flex items-center justify-center gap-2 bg-[#111110] text-white text-sm px-5 py-2.5 rounded-full hover:bg-[#2A2A29] active:scale-[0.98] transition-all duration-200"
+            className="flex w-full items-center justify-center gap-2 rounded-full bg-[#111110] px-5 py-2.5 text-sm text-white transition-all duration-200 hover:bg-[#2A2A29] active:scale-[0.98] sm:w-auto"
           >
             Call +61 3 4427 9403
           </a>

@@ -45,13 +45,13 @@ export default function Portfolio() {
     <section id="portfolio" className="relative py-24 px-4 bg-[#FAFAF8] overflow-hidden">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
             <p className="text-[11px] font-medium tracking-[0.12em] text-[#A8A29E] uppercase mb-3">
               Our work
             </p>
             <h2
-              className="text-4xl md:text-5xl text-[#111110] leading-tight tracking-tight"
+              className="text-[2.4rem] leading-tight tracking-tight text-[#111110] sm:text-4xl md:text-5xl"
               style={{ fontFamily: 'var(--font-instrument-serif)' }}
             >
               Projects across
