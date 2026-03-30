@@ -4,14 +4,18 @@ import Image from 'next/image'
 import { useEffect, useRef } from 'react'
 
 const projects = [
-  { src: '/avatar.png', aspect: 'aspect-[4/3]', span: 'lg:col-span-2', alt: 'Professional painter applying exterior paint to a rendered home wall in Melbourne' },
-  { src: '/photo1.jpeg', aspect: 'aspect-[16/9]', span: 'lg:col-span-2', alt: 'Interior painting project — feature wall and trim in a South East Melbourne home' },
-  { src: '/photo2.jpeg', aspect: 'aspect-square', span: '', alt: 'Exterior house painting in Cheltenham by Orbit Painting Melbourne' },
-  { src: '/photo3.jpeg', aspect: 'aspect-square', span: '', alt: 'Residential interior repaint in Oakleigh — walls and ceiling' },
-  { src: '/photo4.jpeg', aspect: 'aspect-square', span: '', alt: 'Commercial painting project in South East Melbourne office fitout' },
-  { src: '/photo5.jpeg', aspect: 'aspect-square', span: '', alt: 'Exterior weatherboard painting in Frankston by Orbit Painting' },
-  { src: '/photo6.jpeg', aspect: 'aspect-square', span: '', alt: 'Interior feature wall painting in a Dandenong home' },
-  { src: '/photo8.png', aspect: 'aspect-[4/3]', span: 'lg:col-span-2', alt: 'Full exterior repaint of a period home in St Kilda — Orbit Painting Melbourne' },
+  { src: '/1.png', alt: 'Living room renovation before and after transformation showing full repaint and interior styling upgrade' },
+  { src: '/2.png', alt: 'Bathroom renovation before and after comparison with modern vanity, lighting, and stone finishes' },
+  { src: '/3.png', alt: 'Kitchen renovation before and after comparison featuring new navy cabinetry and island bench' },
+  { src: '/5.png', alt: 'Commercial interior repaint in progress with walls, ceiling, and trim being refreshed in a cafe fitout' },
+  { src: '/avatar.png', alt: 'Professional painter applying exterior paint to a rendered home wall in Melbourne' },
+  { src: '/photo1.jpeg', alt: 'Interior painting project — feature wall and trim in a South East Melbourne home' },
+  { src: '/photo2.jpeg', alt: 'Exterior house painting in Cheltenham by Orbit Painting Melbourne' },
+  { src: '/photo3.jpeg', alt: 'Residential interior repaint in Oakleigh — walls and ceiling' },
+  { src: '/photo4.jpeg', alt: 'Commercial painting project in South East Melbourne office fitout' },
+  { src: '/photo5.jpeg', alt: 'Exterior weatherboard painting in Frankston by Orbit Painting' },
+  { src: '/photo6.jpeg', alt: 'Interior feature wall painting in a Dandenong home' },
+  { src: '/photo8.png', alt: 'Full exterior repaint of a period home in St Kilda — Orbit Painting Melbourne' },
 ]
 
 export default function Portfolio() {
@@ -66,7 +70,7 @@ export default function Portfolio() {
         </div>
 
         {/* Asymmetric grid */}
-        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+        <div ref={gridRef} className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, i) => (
             <div
               key={project.src}
@@ -77,7 +81,7 @@ export default function Portfolio() {
                 transform: 'translateY(24px)',
                 transition: 'opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1)',
               }}
-              className={`relative overflow-hidden rounded-2xl group ${project.aspect} ${project.span}`}
+              className="relative aspect-[4/3] overflow-hidden rounded-2xl group"
             >
               <Image
                 src={project.src}
