@@ -53,6 +53,8 @@ const item = {
   },
 }
 
+const HERO_REVEAL_TIME = 4
+
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null)
   const sectionRef = useRef<HTMLElement>(null)
@@ -74,18 +76,24 @@ export default function Hero() {
     const revealText = () => setTextVisible(true)
     video.playbackRate = 0.6
 
-    const handleEnded = () => {
-      revealText()
+    const handleTimeUpdate = () => {
+      if (video.currentTime >= HERO_REVEAL_TIME) {
+        revealText()
+      }
     }
 
     const attemptPlay = () => {
       if (video.ended) return
+      if (video.currentTime >= HERO_REVEAL_TIME) {
+        revealText()
+        return
+      }
       video.play().catch(() => {
         revealText()
       })
     }
 
-    video.addEventListener('ended', handleEnded)
+    video.addEventListener('timeupdate', handleTimeUpdate)
     video.addEventListener('error', revealText)
 
     const observer = new IntersectionObserver(
@@ -102,7 +110,7 @@ export default function Hero() {
     if (sectionRef.current) observer.observe(sectionRef.current)
 
     return () => {
-      video.removeEventListener('ended', handleEnded)
+      video.removeEventListener('timeupdate', handleTimeUpdate)
       video.removeEventListener('error', revealText)
       observer.disconnect()
     }
