@@ -72,18 +72,15 @@ export default function Hero() {
     }
 
     const revealText = () => setTextVisible(true)
-    const fallbackTimer = window.setTimeout(revealText, 1800)
     video.playbackRate = 0.6
 
     const handleEnded = () => {
-      window.clearTimeout(fallbackTimer)
       revealText()
     }
 
     const attemptPlay = () => {
       if (video.ended) return
       video.play().catch(() => {
-        window.clearTimeout(fallbackTimer)
         revealText()
       })
     }
@@ -105,7 +102,6 @@ export default function Hero() {
     if (sectionRef.current) observer.observe(sectionRef.current)
 
     return () => {
-      window.clearTimeout(fallbackTimer)
       video.removeEventListener('ended', handleEnded)
       video.removeEventListener('error', revealText)
       observer.disconnect()
