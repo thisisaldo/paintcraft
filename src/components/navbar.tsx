@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { ArrowRight, Menu, X, ChevronDown, Home, Building2 } from 'lucide-react'
+import { ArrowRight, Menu, X, ChevronDown, Home, Building2, ChefHat, Bath, Clock3 } from 'lucide-react'
 
 const serviceItems = [
   {
@@ -16,6 +16,20 @@ const serviceItems = [
     icon: Building2,
     title: 'Commercial Painting',
     desc: 'Offices & strata',
+  },
+  {
+    href: '/#services',
+    icon: ChefHat,
+    title: 'Kitchen Renovations',
+    desc: 'Coming soon',
+    comingSoon: true,
+  },
+  {
+    href: '/#services',
+    icon: Bath,
+    title: 'Bathroom Renovations',
+    desc: 'Coming soon',
+    comingSoon: true,
   },
 ]
 
@@ -86,12 +100,12 @@ export default function Navbar() {
                 servicesOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-1 pointer-events-none'
               }`}
             >
-              <div className="bg-white border border-[#E8E8E5] rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] p-2 w-60">
+              <div className="bg-white border border-[#E8E8E5] rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] p-2 w-72">
                 {serviceItems.map((item) => {
                   const Icon = item.icon
                   return (
                     <Link
-                      key={item.href}
+                      key={item.title}
                       href={item.href}
                       className="flex items-start gap-3 p-3 rounded-xl hover:bg-[#FAFAF8] transition-colors group cursor-pointer"
                     >
@@ -99,7 +113,15 @@ export default function Navbar() {
                         <Icon className="w-3.5 h-3.5 text-[#111110]" strokeWidth={1.5} />
                       </div>
                       <div>
-                        <p className="text-[#111110] text-sm font-medium leading-tight">{item.title}</p>
+                        <div className="flex flex-wrap items-center gap-2">
+                          <p className="text-[#111110] text-sm font-medium leading-tight">{item.title}</p>
+                          {item.comingSoon && (
+                            <span className="inline-flex items-center gap-1 rounded-full border border-[#E8E8E5] bg-white px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.08em] text-[#A8A29E]">
+                              <Clock3 className="h-3 w-3" strokeWidth={1.5} />
+                              Soon
+                            </span>
+                          )}
+                        </div>
                         <p className="text-[#A8A29E] text-xs mt-0.5">{item.desc}</p>
                       </div>
                     </Link>
@@ -163,7 +185,7 @@ export default function Navbar() {
                   const Icon = item.icon
                   return (
                     <Link
-                      key={item.href}
+                      key={item.title}
                       href={item.href}
                       className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-[#FAFAF8] transition-colors"
                       onClick={() => setMobileOpen(false)}
@@ -172,7 +194,15 @@ export default function Navbar() {
                         <Icon className="w-3 h-3 text-[#111110]" strokeWidth={1.5} />
                       </div>
                       <div>
-                        <p className="text-[#111110] text-sm font-medium">{item.title}</p>
+                        <div className="flex flex-wrap items-center gap-2">
+                          <p className="text-[#111110] text-sm font-medium">{item.title}</p>
+                          {item.comingSoon && (
+                            <span className="inline-flex items-center gap-1 rounded-full border border-[#E8E8E5] bg-white px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.08em] text-[#A8A29E]">
+                              <Clock3 className="h-3 w-3" strokeWidth={1.5} />
+                              Soon
+                            </span>
+                          )}
+                        </div>
                         <p className="text-[#A8A29E] text-xs">{item.desc}</p>
                       </div>
                     </Link>
