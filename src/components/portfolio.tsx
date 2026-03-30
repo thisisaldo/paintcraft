@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { useEffect, useRef } from 'react'
 
 const projects = [
+  { src: '/avatar.png', aspect: 'aspect-[4/3]', span: 'lg:col-span-2', alt: 'Professional painter applying exterior paint to a rendered home wall in Melbourne' },
   { src: '/photo1.jpeg', aspect: 'aspect-[16/9]', span: 'lg:col-span-2', alt: 'Interior painting project — feature wall and trim in a South East Melbourne home' },
   { src: '/photo2.jpeg', aspect: 'aspect-square', span: '', alt: 'Exterior house painting in Cheltenham by Orbit Painting Melbourne' },
   { src: '/photo3.jpeg', aspect: 'aspect-square', span: '', alt: 'Residential interior repaint in Oakleigh — walls and ceiling' },
