@@ -1,4 +1,4 @@
-import { Home, Building2, PaintBucket, CloudSun } from 'lucide-react'
+import { Home, Building2, PaintBucket, CloudSun, ChefHat, Bath, Clock3 } from 'lucide-react'
 
 const services = [
   {
@@ -32,6 +32,24 @@ const services = [
     description:
       'Weather-resistant finishes that protect your SE Melbourne property through every season. Proper surface prep included — no shortcuts.',
     features: ['Weatherboard', 'Render & texture', 'Decks & fences', 'Roof painting'],
+  },
+  {
+    icon: ChefHat,
+    title: 'Kitchen Renovations',
+    subtitle: 'Coming soon',
+    description:
+      'A new renovation offering focused on cleaner layouts, better finishes, and practical upgrades for Melbourne kitchens.',
+    features: ['Layout refreshes', 'Cabinet upgrades', 'Surface finishes', 'Project coordination'],
+    comingSoon: true,
+  },
+  {
+    icon: Bath,
+    title: 'Bathroom Renovations',
+    subtitle: 'Coming soon',
+    description:
+      'A streamlined bathroom renovation service is on the way, designed for durable finishes, tidy execution, and minimal disruption.',
+    features: ['Bathroom refreshes', 'Fixture upgrades', 'Water-resistant finishes', 'End-to-end planning'],
+    comingSoon: true,
   },
 ]
 
@@ -74,9 +92,17 @@ export default function Services() {
                       <Icon className="w-4 h-4 text-[#111110]" strokeWidth={1.5} />
                     </div>
                     <div>
-                      <h3 className="text-[#111110] font-medium text-sm leading-tight">
-                        {service.title}
-                      </h3>
+                      <div className="flex flex-wrap items-center gap-2">
+                        <h3 className="text-[#111110] font-medium text-sm leading-tight">
+                          {service.title}
+                        </h3>
+                        {service.comingSoon && (
+                          <span className="inline-flex items-center gap-1 rounded-full border border-[#E8E8E5] bg-white px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.08em] text-[#A8A29E]">
+                            <Clock3 className="h-3 w-3" strokeWidth={1.5} />
+                            Coming soon
+                          </span>
+                        )}
+                      </div>
                       <p className="text-[#A8A29E] text-xs mt-0.5">{service.subtitle}</p>
                     </div>
                   </div>
