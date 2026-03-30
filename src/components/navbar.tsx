@@ -62,10 +62,10 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-3 pt-3 sm:px-4 sm:pt-5">
       <nav
-        className={`h-14 md:h-[52px] max-w-5xl mx-auto flex items-center justify-between px-4 sm:px-5 md:px-6 rounded-full transition-all duration-500 overflow-visible ${
+        className={`h-14 md:h-[52px] max-w-5xl mx-auto flex items-center justify-between px-4 sm:px-5 md:px-6 rounded-full border border-white/45 backdrop-blur-xl backdrop-saturate-150 transition-all duration-500 overflow-visible ${
           scrolled
-            ? 'bg-white/95 backdrop-blur-sm border border-[#E8E8E5] shadow-[0_2px_20px_rgba(0,0,0,0.06)]'
-            : 'bg-transparent'
+            ? 'bg-white/72 shadow-[0_18px_45px_rgba(17,17,16,0.12),inset_0_1px_0_rgba(255,255,255,0.78)]'
+            : 'bg-white/38 shadow-[0_12px_34px_rgba(17,17,16,0.08),inset_0_1px_0_rgba(255,255,255,0.62)]'
         }`}
       >
         {/* Logo */}
@@ -100,7 +100,7 @@ export default function Navbar() {
                 servicesOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-1 pointer-events-none'
               }`}
             >
-              <div className="bg-white border border-[#E8E8E5] rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] p-2 w-72">
+              <div className="w-72 rounded-2xl border border-white/50 bg-white/70 p-2 backdrop-blur-xl backdrop-saturate-150 shadow-[0_18px_44px_rgba(17,17,16,0.12),inset_0_1px_0_rgba(255,255,255,0.7)]">
                 {serviceItems.map((item) => {
                   const Icon = item.icon
                   return (
@@ -165,7 +165,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="md:hidden mt-2 max-h-[calc(100dvh-5.5rem)] overflow-y-auto rounded-2xl border border-[#E8E8E5] bg-white p-5 shadow-[0_8px_30px_rgba(0,0,0,0.08)]">
+        <div className="md:hidden mt-2 max-h-[calc(100dvh-5.5rem)] overflow-y-auto rounded-2xl border border-white/50 bg-white/72 p-5 backdrop-blur-xl backdrop-saturate-150 shadow-[0_18px_44px_rgba(17,17,16,0.12),inset_0_1px_0_rgba(255,255,255,0.7)]">
           <div className="flex flex-col gap-1">
 
             {/* Services — expandable */}
