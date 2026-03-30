@@ -6,17 +6,33 @@ import { ArrowRight } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const container = {
-  hidden: {},
+  hidden: {
+    opacity: 0,
+    y: 42,
+    scale: 0.97,
+    filter: 'blur(14px)',
+  },
   show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    filter: 'blur(0px)',
     transition: {
-      staggerChildren: 0.12,
-      delayChildren: 0.05,
+      duration: 0.95,
+      ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
+      staggerChildren: 0.1,
     },
   },
   exit: {
+    opacity: 0,
+    y: -16,
+    scale: 0.985,
+    filter: 'blur(8px)',
     transition: {
-      staggerChildren: 0.06,
-      staggerDirection: -1,
+      duration: 0.45,
+      ease: [0.4, 0, 1, 1] as [number, number, number, number],
+      staggerChildren: 0.05,
+      staggerDirection: -1 as const,
     },
   },
 }
@@ -27,7 +43,7 @@ const item = {
     opacity: 1,
     y: 0,
     filter: 'blur(0px)',
-    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
+    transition: { duration: 0.82, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
   },
   exit: {
     opacity: 0,
@@ -94,15 +110,15 @@ export default function Hero() {
           muted
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
-          style={{ opacity: 0.8 }}
+          style={{ opacity: 0.88 }}
         >
-          <source src="/video 1.mp4" type="video/mp4" />
+          <source src="/hero.mp4" type="video/mp4" />
         </video>
       </div>
 
       {/* Edge fade — blends video into site background on all four sides */}
-      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-[#FAFAF8] via-transparent to-[#FAFAF8]/80" style={{ backgroundImage: 'linear-gradient(to bottom, #FAFAF8 0%, #FAFAF8 8%, rgba(250,250,248,0.15) 28%, transparent 50%, rgba(250,250,248,0.8) 100%)' }} />
-      <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-[#FAFAF8]/30 via-transparent to-[#FAFAF8]/30" />
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-[#FAFAF8] via-transparent to-[#FAFAF8]/70" style={{ backgroundImage: 'linear-gradient(to bottom, #FAFAF8 0%, #FAFAF8 7%, rgba(250,250,248,0.1) 24%, transparent 50%, rgba(250,250,248,0.7) 100%)' }} />
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-[#FAFAF8]/22 via-transparent to-[#FAFAF8]/22" />
 
       {/* Content */}
       <div className="relative z-10 flex items-center justify-center w-full px-4 pt-28">
@@ -113,6 +129,7 @@ export default function Hero() {
               variants={container}
               initial="hidden"
               animate="show"
+              exit="exit"
               className="w-full max-w-2xl text-center rounded-3xl px-8 py-10 md:px-12 md:py-14"
               style={{
                 background: 'rgba(250, 250, 248, 0.32)',
