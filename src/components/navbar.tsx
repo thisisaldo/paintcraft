@@ -100,7 +100,7 @@ export default function Navbar() {
                 servicesOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-1 pointer-events-none'
               }`}
             >
-              <div className="w-72 rounded-2xl border border-white/50 bg-white/70 p-2 backdrop-blur-xl backdrop-saturate-150 shadow-[0_18px_44px_rgba(17,17,16,0.12),inset_0_1px_0_rgba(255,255,255,0.7)]">
+              <div className="w-72 rounded-2xl border border-stone-200 bg-white p-2 shadow-[0_18px_44px_rgba(17,17,16,0.12)]">
                 {serviceItems.map((item) => {
                   const Icon = item.icon
                   return (
