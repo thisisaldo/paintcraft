@@ -59,9 +59,9 @@ export default function WhyUs() {
             className="max-w-[18ch] text-[2.4rem] leading-tight tracking-tight text-[#111110] sm:text-4xl md:text-5xl"
             style={{ fontFamily: 'var(--font-instrument-serif)' }}
           >
-            Built on <em>reputation</em>,
+            15 years. 2,400 projects.
             <br />
-            not just results
+            <em>One standard.</em>
           </h2>
         </div>
 

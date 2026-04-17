@@ -22,7 +22,7 @@ const services = [
     title: 'Interior Painting',
     subtitle: 'Walls, Ceilings & Trim',
     description:
-      'Meticulous preparation, clean lines, and perfect finishes. Feature walls, cornices, and detailed trim work included.',
+      'Sharp lines, seamless ceilings, and trim that\'s actually precise. We prep until it\'s right — and paint until it\'s perfect.',
     features: ['Feature walls', 'Ceiling repairs', 'Cornice & trim', 'Colour consulting'],
   },
   {
@@ -38,7 +38,7 @@ const services = [
     title: 'Kitchen Renovations',
     subtitle: 'Coming soon',
     description:
-      'A new renovation offering focused on cleaner layouts, better finishes, and practical upgrades for Melbourne kitchens.',
+      'Cleaner layouts, smarter finishes, and practical upgrades built for Melbourne kitchens. Almost ready — get in touch to register your early interest.',
     features: ['Layout refreshes', 'Cabinet upgrades', 'Surface finishes', 'Project coordination'],
     comingSoon: true,
   },
@@ -47,7 +47,7 @@ const services = [
     title: 'Bathroom Renovations',
     subtitle: 'Coming soon',
     description:
-      'A streamlined bathroom renovation service is on the way, designed for durable finishes, tidy execution, and minimal disruption.',
+      'Water-resistant finishes, clean execution, and zero unnecessary disruption. Our bathroom renovation service is on its way.',
     features: ['Bathroom refreshes', 'Fixture upgrades', 'Water-resistant finishes', 'End-to-end planning'],
     comingSoon: true,
   },
@@ -67,13 +67,13 @@ export default function Services() {
               className="text-[2.4rem] leading-tight tracking-tight text-[#111110] sm:text-4xl md:text-5xl"
               style={{ fontFamily: 'var(--font-instrument-serif)' }}
             >
-              Complete painting
+              Every surface, every suburb —
               <br />
-              <em>services</em> across South East Melbourne
+              <em>done right</em>
             </h2>
           </div>
           <p className="text-[#78716C] text-sm max-w-[40ch] leading-relaxed md:text-right">
-            VBA licensed, fully insured, and trusted by South East Melbourne homeowners and businesses since 2009.
+            VBA licensed, fully insured, and the team SE Melbourne homeowners and businesses have trusted since 2009.
           </p>
         </div>
 

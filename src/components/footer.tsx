@@ -52,8 +52,7 @@ export default function Footer() {
           {/* Brand + NAP */}
           <div>
             <p className="mb-5 max-w-sm text-xs leading-relaxed text-[#4A4A48]">
-              South East Melbourne&apos;s trusted residential and commercial painting specialists.
-              Licensed, insured, and delivering flawless results since 2009.
+              SE Melbourne&apos;s painters since 2009. Locally owned, VBA licensed, and trusted because we show up and get it right.
             </p>
 
             {/* NAP — Name · Address · Phone */}

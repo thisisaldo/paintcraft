@@ -30,14 +30,14 @@ export default function Contact() {
                 className="mb-5 text-[2.4rem] leading-tight tracking-tight text-white sm:text-4xl md:text-5xl"
                 style={{ fontFamily: 'var(--font-instrument-serif)' }}
               >
-                Ready to
+                Talk to Mick.
                 <br />
-                <em>transform</em>
+                <em>No scripts,</em>
                 <br />
-                your space?
+                no pressure.
               </h2>
               <p className="text-[#78716C] text-sm leading-relaxed">
-                Chat with Mick for an instant answer on pricing, timelines, or to kick off your free quote — no forms, no waiting.
+                Get a straight answer on pricing, timelines, or your suburb — then start your free written quote when you&apos;re ready.
               </p>
             </div>
 
@@ -109,7 +109,7 @@ export default function Contact() {
                   Chat with Mick
                 </h3>
                 <p className="text-[#78716C] text-sm leading-relaxed">
-                  Get answers on pricing, suburbs, timelines, or start your free quote — right now.
+                  Ask anything about your project — pricing, suburbs, timelines. Start your free written quote when you&apos;re ready.
                 </p>
               </div>
             </div>

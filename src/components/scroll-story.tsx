@@ -4,10 +4,10 @@ import { useEffect, useRef } from 'react'
 
 const CARD = {
   eyebrow: 'South East Melbourne',
-  heading: "We treat your home\nlike it's our own",
-  body: 'From prep to final coat, every job is handled by our local SE Melbourne team — VBA licensed, fully insured, and focused on getting it right the first time. No subcontractors, no shortcuts.',
+  heading: "No subcontractors.\nJust our crew, every time.",
+  body: 'From first coat of primer to final walkthrough, every job is handled by our permanent SE Melbourne team — VBA licensed, fully insured, and accountable from start to finish. We never hand off your home.',
   stat: 'SE Melbourne',
-  statLabel: 'local team, every job',
+  statLabel: 'local crew, every job',
 }
 
 function easeInOut(t: number) {

@@ -181,15 +181,15 @@ export default function Hero() {
               >
                 Your home, painted
                 <br />
-                <em>perfectly</em> — on time,
+                <em>perfectly</em> — one team,
                 <br />
-                on budget
+                start to finish
               </motion.h2>
 
               {/* Subtext */}
               <motion.p variants={item} className="mx-auto mb-7 max-w-[44ch] text-sm leading-relaxed text-[#78716C] sm:mb-8 sm:text-base md:text-lg">
-                SE Melbourne&apos;s local painting specialists — serving homes and businesses
-                from St Kilda to Frankston. VBA licensed, fully insured, free quotes within 24 hours.
+                SE Melbourne&apos;s local painting specialists — no subcontractors, no hand-offs.
+                VBA licensed, fully insured, serving homes and businesses from St Kilda to Frankston.
               </motion.p>
 
               {/* CTAs */}
